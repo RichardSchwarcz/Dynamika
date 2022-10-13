@@ -15,7 +15,7 @@ class BendingMoment:
         return -q * length**2 / 12
 
     def distributedLoad_B(length, q):
-        return q * length**2 / 12
+        return -q * length**2 / 12
 
 
 class ShearForce:
