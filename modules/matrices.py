@@ -1,29 +1,31 @@
 import pandas as pd
 import numpy as np
+# from typing import Optional
+from dataclasses import dataclass, field
+
+from modules.model import Bar, BarProps
 
 
-class TransformationMatrix:
-    def rotation(alfa):
-        alfa_rad = np.deg2rad(alfa)
+class BaseFunctions:
+    def rotationMatrix(self, angle):
+        alfa_rad = np.deg2rad(angle)
         return pd.DataFrame([[np.cos(alfa_rad),
                               np.sin(alfa_rad), 0],
                              [-np.sin(alfa_rad),
                               np.cos(alfa_rad), 0], [0, 0, 1]])
 
-    def transmission(lx, ly):
+    def transmissionMatrix(self, lx, ly):
         return pd.DataFrame([[-1, 0, 0], [0, -1, 0], [-ly, lx, -1]])
 
-
-class BarStiffnessMatrix:
-    def lss(BarProps, Bar):
+    def lss_barStiffnessMatrix(self, BarProps, Bar):
         return pd.DataFrame([[BarProps.E * BarProps.A / Bar.len, 0, 0],
                              [0, 12 * BarProps.E * BarProps.I / Bar.len**3,
                               6 * BarProps.E * BarProps.I / Bar.len**2],
                              [0, 6 * BarProps.E * BarProps.I / Bar.len**2,
                               4 * BarProps.E * BarProps.I / Bar.len]])
 
-    def gss(rotationMatrix, lssBarStiffnessMatrix,
-            transmissionMatrix):
+    def gss_barStiffnessMatrix(self, rotationMatrix, lssBarStiffnessMatrix,
+                               transmissionMatrix):
         A = rotationMatrix
         k = lssBarStiffnessMatrix
         B = transmissionMatrix
@@ -43,6 +45,31 @@ class BarStiffnessMatrix:
         return pd.concat([col1, col2], axis=1)
 
 
+@dataclass
+class BarMatrices(BaseFunctions):
+    barProps: BarProps = field(repr=False)
+    bar: Bar = field(repr=False)
+    rotation: pd.DataFrame = field(init=False)
+    transmission: pd.DataFrame = field(init=False)
+    lss_stiffness: pd.DataFrame = field(init=False)
+    gss_stiffness: pd.DataFrame = field(init=False)
+
+    def __post_init__(self) -> None:
+        # define local variables
+        angle = self.bar.angle
+        barProps = self.barProps
+        bar = self.bar
+        [lx, ly] = self.bar.l_xy
+
+        # assign to self
+        self.rotation = self.rotationMatrix(angle)
+        self.lss_stiffness = self.lss_barStiffnessMatrix(
+            barProps, bar)
+        self.transmission = self.transmissionMatrix(lx, ly)
+        self.gss_stiffness = self.gss_barStiffnessMatrix(
+            self.rotation, self.lss_stiffness, self.transmission)
+
+
 class LoadMatrix:
     def lss(N, V, M):
         return pd.DataFrame([[N], [V], [M]])
@@ -52,3 +79,12 @@ class LoadMatrix:
 
     def super(globalMatrix_1, globalMatrix_2):
         return pd.concat([globalMatrix_1, globalMatrix_2])
+
+
+def modelMatrix(barMatrices):
+    [k1, k2, k3] = barMatrices
+    zeros = pd.DataFrame(np.zeros((12, 12)))
+    layer1 = zeros.add(k1, fill_value=0)
+    layer2 = layer1.add(k2, fill_value=0)
+    layer3 = layer2.add(k3, fill_value=0)
+    return layer3
