@@ -7,15 +7,26 @@ import numpy as np
 
 @dataclass
 class DOF:
+    # [x, y, fi]
     STIFF = [0, 0, 0]
     HINGE = [0, 0, 1]
+    FREE_HINGE_X = [1, 0, 1]
+    FREE_HINGE_Y = [0, 1, 1]
     FREE = [1, 1, 1]
 
 
 @dataclass
 class Point:
+    """
+    x: X coordinate
+    y: Y coordinate
+    name: name of a point. Only for representation
+    codeNumbers: array of three numbers used to position point in a stiffness matrix.
+    """
     x: int
     y: int
+    name: str
+    codeNumbers: list
     dof: list = field(init=False, default_factory=lambda: DOF.FREE)
 
     @property
@@ -25,6 +36,14 @@ class Point:
     @property
     def hinge(self):
         self.dof = DOF.HINGE
+
+    @property
+    def free_hinge_x(self):
+        self.dof = DOF.FREE_HINGE_X
+
+    @property
+    def free_hinge_y(self):
+        self.dof = DOF.FREE_HINGE_Y
 
 
 @dataclass
@@ -46,17 +65,25 @@ class BarProps:
 class Bar:
     point_a: Point
     point_b: Point
-    len: int = field(init=False)
-    angle: int = field(init=False)
-    l_xy: int = field(init=False)
 
-    def __post_init__(self) -> None:
-        self.len = calculateDistance(self.point_a, self.point_b)
-        self.angle = angle(self.point_a, self.point_b)
-        self.l_xy = l_xy(self.point_a, self.point_b)
+    @property
+    def len(self):
+        return calculateDistance(self.point_a, self.point_b)
 
+    @property
+    def angle(self):
+        return angle(self.point_a, self.point_b)
 
+    @property
+    def l_xy(self):
+        return l_xy(self.point_a, self.point_b)
+
+    @property
+    def codeNumbers(self):
+        return self.point_a.codeNumbers.__add__(self.point_b.codeNumbers)
 # -------------- FUNCTIONS -------------------
+
+
 def l_xy(A, B):
     point_1 = [A.x, A.y]
     point_2 = [B.x, B.y]
@@ -97,7 +124,7 @@ def elasticModulus(material):
 def calculateDistance(A, B):
     point_1 = [A.x, A.y]
     point_2 = [B.x, B.y]
-    return math.sqrt((point_1[1] - point_1[0])**2 + (point_2[1] - point_2[0])**2)
+    return math.sqrt((abs(point_1[1]) - abs(point_1[0]))**2 + (abs(point_2[1]) - abs(point_2[0]))**2)
 
 
 def angle(A, B):
