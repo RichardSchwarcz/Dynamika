@@ -9,10 +9,9 @@ import numpy as np
 class DOF:
     # [x, y, fi]
     STIFF = [0, 0, 0]
-    HINGE = [0, 0, 1]
-    FREE_HINGE_X = [1, 0, 1]
-    FREE_HINGE_Y = [0, 1, 1]
     FREE = [1, 1, 1]
+    FREE_fi_x = [0, 1, 0]
+    FREE_fi_y = [0, 0, 1]
 
 
 @dataclass
@@ -34,16 +33,12 @@ class Point:
         self.dof = DOF.STIFF
 
     @property
-    def hinge(self):
-        self.dof = DOF.HINGE
+    def free_fi_x(self):
+        self.dof = DOF.FREE_fi_x
 
     @property
-    def free_hinge_x(self):
-        self.dof = DOF.FREE_HINGE_X
-
-    @property
-    def free_hinge_y(self):
-        self.dof = DOF.FREE_HINGE_Y
+    def free_fi_y(self):
+        self.dof = DOF.FREE_fi_y
 
 
 @dataclass
@@ -54,11 +49,15 @@ class BarProps:
     A: int = field(init=False)
     E: int = field(init=False)
     I: int = field(init=False)
+    I_k: int = field(init=False)
+    G: int = field(init=False)
 
     def __post_init__(self) -> None:
         self.A = crossSectionArea(self.crossSection)
         self.E = elasticModulus(self.material)
         self.I = momentOfInertia(self.crossSection)
+        self.G = shearModulus(self.material)
+        self.I_k = momentOfInertia_torsion(self.crossSection)
 
 
 @dataclass
@@ -107,6 +106,10 @@ def momentOfInertia(crossSection):
         (crossSection['height']**3) * 10 ** -12
 
 
+def momentOfInertia_torsion(crossSection):
+    return 46947.80 * 10**-8
+
+
 def elasticModulus(material):
     if material == "C16/20":
         E = 2.9 * (10**7)
@@ -121,10 +124,24 @@ def elasticModulus(material):
     return E
 
 
+def shearModulus(material):
+    if material == "C16/20":
+        G = 1.20833 * (10**7)
+    if material == "C20/25":
+        G = 1.25 * (10**7)
+    if material == "C25/30":
+        G = 1.29167 * (10**7)
+    if material == "C30/37":
+        G = 1.3750 * (10**7)
+    if material == "C35/45":
+        G = 1.41667 * (10**7)
+    return G
+
+
 def calculateDistance(A, B):
     point_1 = [A.x, A.y]
     point_2 = [B.x, B.y]
-    return math.sqrt((abs(point_2[0]) - abs(point_1[0]))**2 + (abs(point_2[1]) - abs(point_1[1]))**2)
+    return math.sqrt((abs(point_1[1]) - abs(point_1[0]))**2 + (abs(point_2[1]) - abs(point_2[0]))**2)
 
 
 def angle(A, B):
