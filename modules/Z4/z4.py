@@ -2,16 +2,16 @@ import numpy as np
 import matplotlib.patches as mpatches
 
 
-def matica_hmotnosti(m):
+def matica_hmotnosti(m: int) -> np.ndarray:
     return np.diag([m, m, m, m])
 
 
-def H_vector(H):
+def H_vector(H: float) -> np.ndarray:
     H_vect = np.array([H, 3*H/4, 2*H/4, H/4, 0])
     return H_vect
 
 
-def plotSchema(delta, H_vector_, hmoty, ax, index):
+def plotSchema(delta: np.ndarray, H_vector_: np.ndarray, hmoty: int, ax, index: int) -> None:
     i = index
     delta = np.insert(delta, 4, 0, axis=1)
     X = delta[i]
@@ -61,7 +61,8 @@ def vlastny_tvar(hmoty, tvary, mm, omega, delta_inv, iteracia):
     V0k = np.zeros((hmoty, tvary))
 
     # diag matrix of hmoty * omega
-    p4 = np.eye(hmoty) * omega[i, i]
+    # p4 = np.eye(hmoty) * omega[i, i]
+    p4 = np.eye(hmoty) * omega[i]
     # print(f'p4 \n {p4}')
     p5 = delta_inv - mm * p4**2
     # print(f'p5 \n {p5}')

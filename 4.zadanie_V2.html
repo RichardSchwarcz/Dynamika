@@ -3,7 +3,7 @@
 <head><meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>1.zadanie</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>4.zadanie_V2</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 
 
 
@@ -14260,7 +14260,7 @@ a.anchor-link {
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Richard Schwarcz, 2.NKDS</p>
-<h1 id="1.Zadanie">1.Zadanie<a class="anchor-link" href="#1.Zadanie">&#182;</a></h1>
+<h1 id="4.Zadanie">4.Zadanie<a class="anchor-link" href="#4.Zadanie">&#182;</a></h1>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -14271,7 +14271,7 @@ a.anchor-link {
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="vm">__file__</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;1.zadanie.ipynb&#39;</span><span class="p">)</span>
+<span class="vm">__file__</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="s1">&#39;4.zadanie_V2.ipynb&#39;</span><span class="p">)</span>
 <span class="n">baseName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
 <span class="n">dirName</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
 <span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dirName</span> <span class="o">+</span> <span class="sa">r</span><span class="s1">&#39;/..&#39;</span><span class="p">)</span>
@@ -14289,75 +14289,7 @@ a.anchor-link {
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">set_option</span><span class="p">(</span><span class="s2">&quot;display.precision&quot;</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-
-<span class="kn">from</span> <span class="nn">modules.helpers</span> <span class="kn">import</span> <span class="n">parseMatrixRows</span><span class="p">,</span> <span class="n">parseMatrixColumns</span><span class="p">,</span> <span class="n">parseMatrixIndexes</span>
-<span class="kn">from</span> <span class="nn">modules.plot</span> <span class="kn">import</span> <span class="n">highlightNotZero</span><span class="p">,</span> <span class="n">plotSchema</span>
-
-<span class="kn">from</span> <span class="nn">modules.Z1.model</span> <span class="kn">import</span> <span class="n">BarProps</span>
-<span class="kn">from</span> <span class="nn">modules.Z1.model</span> <span class="kn">import</span> <span class="n">Point</span><span class="p">,</span> <span class="n">Bar</span>
-<span class="kn">from</span> <span class="nn">modules.Z1.matrices</span> <span class="kn">import</span> <span class="n">LoadMatrix</span><span class="p">,</span> <span class="n">BarMatrices</span><span class="p">,</span> <span class="n">modelMatrix</span>
-<span class="kn">from</span> <span class="nn">modules.Z1.internalForces</span> <span class="kn">import</span> <span class="o">*</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">crossSection</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;width&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span> <span class="s2">&quot;height&quot;</span><span class="p">:</span> <span class="mi">300</span><span class="p">}</span>
-<span class="n">material</span> <span class="o">=</span> <span class="s2">&quot;C30/37&quot;</span>
-<span class="n">barProps</span> <span class="o">=</span> <span class="n">BarProps</span><span class="p">(</span><span class="n">material</span><span class="p">,</span> <span class="n">crossSection</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;E = </span><span class="si">{</span><span class="n">barProps</span><span class="o">.</span><span class="n">E</span><span class="si">}</span><span class="s1"> kPa </span><span class="se">\n</span><span class="s1">I = </span><span class="si">{</span><span class="n">barProps</span><span class="o">.</span><span class="n">I</span><span class="si">}</span><span class="s1"> m-4</span><span class="se">\n</span><span class="s1">A = </span><span class="si">{</span><span class="n">barProps</span><span class="o">.</span><span class="n">A</span><span class="si">}</span><span class="s1"> m2&#39;</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>E = 33000000.0 kPa 
-I = 0.00044999999999999993 m-4
-A = 0.06 m2
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">F</span> <span class="o">=</span> <span class="mi">40</span> <span class="c1">#kN</span>
-<span class="n">Q</span> <span class="o">=</span> <span class="mi">5</span> <span class="c1">#kN/m</span>
-<span class="n">load_bar12</span> <span class="o">=</span> <span class="n">Load</span><span class="p">(</span><span class="n">Q</span> <span class="o">=</span> <span class="n">Q</span><span class="p">)</span>
-<span class="n">load_bar23</span> <span class="o">=</span> <span class="n">Load</span><span class="p">(</span><span class="n">F</span> <span class="o">=</span> <span class="n">F</span><span class="p">,</span> <span class="n">F_position</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-<span class="n">load_bar34</span> <span class="o">=</span> <span class="n">Load</span><span class="p">(</span><span class="n">Q</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">F</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">modules.Z4.z4_zapocet</span> <span class="kn">import</span> <span class="o">*</span> 
 </pre></div>
 
      </div>
@@ -14371,10 +14303,16 @@ A = 0.06 m2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;bod 1&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;bod 2&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">])</span>
-<span class="n">p3</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span> <span class="s2">&quot;bod 3&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">])</span>
-<span class="n">p4</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;bod 4&quot;</span><span class="p">,</span> <span class="p">[</span><span class="mi">9</span><span class="p">,</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">])</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">FI</span> <span class="o">=</span> <span class="mi">300</span>  <span class="c1"># mm</span>
+<span class="n">TW</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># mm</span>
+<span class="n">H</span> <span class="o">=</span> <span class="mi">50</span>  <span class="c1"># m</span>
+<span class="n">M</span> <span class="o">=</span> <span class="mi">1000</span>  <span class="c1"># kg</span>
+<span class="n">q</span> <span class="o">=</span> <span class="mf">1.5</span> <span class="c1"># sucinitel duktility</span>
+<span class="n">ag</span> <span class="o">=</span> <span class="mf">0.63</span> <span class="c1"># spickove zrychlenie</span>
+<span class="n">tvary</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># pocet tvarov</span>
+<span class="n">hmoty</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1"># pocet hmot</span>
+<span class="n">polozie</span> <span class="o">=</span> <span class="s2">&quot;C&quot;</span>
+<span class="n">typ_spektra</span> <span class="o">=</span> <span class="mi">2</span>
 </pre></div>
 
      </div>
@@ -14388,9 +14326,8 @@ A = 0.06 m2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">p1</span><span class="o">.</span><span class="n">stiff</span> <span class="c1">#votknutie v bode 1</span>
-<span class="n">p4</span><span class="o">.</span><span class="n">hinge</span> <span class="c1">#klbova podpera v bode 4</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;p1 = </span><span class="si">{</span><span class="n">p1</span><span class="si">}</span><span class="se">\n</span><span class="s1"> p2 = </span><span class="si">{</span><span class="n">p2</span><span class="si">}</span><span class="se">\n</span><span class="s1"> p3 = </span><span class="si">{</span><span class="n">p3</span><span class="si">}</span><span class="se">\n</span><span class="s1"> p4 = </span><span class="si">{</span><span class="n">p4</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">f</span> <span class="o">=</span> <span class="n">vlastne_frekvencie</span><span class="p">([</span><span class="mf">0.071</span><span class="p">,</span> <span class="mf">0.436</span><span class="p">,</span> <span class="mf">1.2</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;f1 = </span><span class="si">{</span><span class="n">f</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> hz </span><span class="se">\n</span><span class="s1">f2 = </span><span class="si">{</span><span class="n">f</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> hz </span><span class="se">\n</span><span class="s1">f3 = </span><span class="si">{</span><span class="n">f</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1"> hz&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14410,10 +14347,9 @@ A = 0.06 m2
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>p1 = Point(x=0, y=0, name=&#39;bod 1&#39;, codeNumbers=[0, 1, 2], dof=[0, 0, 0])
- p2 = Point(x=0, y=3, name=&#39;bod 2&#39;, codeNumbers=[3, 4, 5], dof=[1, 1, 1])
- p3 = Point(x=3, y=3, name=&#39;bod 3&#39;, codeNumbers=[6, 7, 8], dof=[1, 1, 1])
- p4 = Point(x=3, y=0, name=&#39;bod 4&#39;, codeNumbers=[9, 10, 11], dof=[0, 0, 1])
+<pre>f1 = 0.071 hz 
+f2 = 0.436 hz 
+f3 = 1.2 hz
 </pre>
 </div>
 </div>
@@ -14428,48 +14364,8 @@ A = 0.06 m2
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">plotSchema</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-
-
-<div class="jp-RenderedImage jp-OutputArea-output ">
-<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAY4AAAEVCAYAAAD3pQL8AAAAOXRFWHRTb2Z0d2FyZQBNYXRwbG90bGliIHZlcnNpb24zLjMuNCwgaHR0cHM6Ly9tYXRwbG90bGliLm9yZy8QVMy6AAAACXBIWXMAAAsTAAALEwEAmpwYAAAdYElEQVR4nO3de3hU9b3v8feXEO6QgEShQAgWtFtJuaWIl11RpEU3FD3HPo/0YmG3pbS2p621nu7uPlw853R3H/u0XvDUctTirbhrFQXFo27qDQE1IAKCxSi3ANYoJiEFEeL3/DELHIZJZn5kkpkJn9fzzJM1a/3mt76/Wbo+rFlrZpm7IyIikq4O2S5ARETyi4JDRESCKDhERCSIgkNERIIoOEREJIiCQ0REgig4pN0ws/Fm5tFjfLbrEWmvFBwiIhJEwSEiIkEUHJJTzGySmb1oZh+Y2QEz22pmi81sSLR8jJk9YmbvmdlBM9tuZnOSdDUget3foz6+mbCefmZ2h5ntMrOPon5+ZWad49o8G33s9ayZ/cTM3jGzvWY218y6mdkCM9sXvfZbca/rHtW4NVr/QTN708xuMLNOrfbmibQR00+OSK4ws77ALqATsBPYCwwC+gD/CHwMPBMtPwRsAU4FNrn7+Oi8xjNRdweAv0Wv7RW99mx3f8PMTgHWAIOBvwNvAZ+J+n3M3adE9TwLXAgcjB61QGnU/yagJOr3tIT++wI10fr3AH2BgdHrfu3uP83A2yWSNTrikFwymNjOex/wGXcf6e6nACOAvwL/M1peB4xw9+HEdto/TtLXMuB0YoEDsf/Wx0fT10Tr2gsMc/cRwMXRsslmdn5CXx2iGs4CPormlQBnAOfHtTnSfz2xEOnn7qPcfRBwX7TsqrTeCZEc1jHbBYjEeR14m9gO/10zezOa9xiwATgnarfY3TcDeOyQ+dUkfd3n7m5mm+LmnRb9PdJPH2C3mSW+dhzwYtzzje6+DcDMaoABwAp3rzWzuiT9NwJfM7Mr+SQMj/hUE2MXyRsKDskZ7v6hmY0Bvk5s534W8BXgq0D/wO5qoz4PxwWDJfxtIBZMSV8bpz5u+nD8vCicEvv/GfAv0fR24B1iH1UNQEf50g7oP2LJGWbWi9i5hvnu/jV3H80n5ywuBl6Kpi83szPiXjcicFUvR38d+Jq7j3P3ccBFwK+Bh050DJFx0d8t7l4GnAe81sI+RXKGjjgkl5wKrAI+MLNqYh/xnBktWw88TixIioGNZvZXYuca3uCT8wvpmA/8M7ET75vM7A2ga/S8MzCE4486QqwHJgNnmNlWoDDqX6Rd0BGH5JL3gT8QuxKpjNj5gbeAfwfmuftKYv96f5TYR0VnErva6dmQlbj7e8SOCu4A3gX+gdiVV68APyd2NVRL/BK4m1j49AIeAP5PC/sUyRm6HFdERILoiENERIIoOEREJIiCQ0REgig4REQkiIJDRESCKDhERCSIgkNERIIoOEREJIiCQ0REgrTL36oaanZD8Sc33MkJtbCjyn12tusQkdyWi/svOHYf1i6DoxhKK2FbtuuIVxH77SURkWYV5+D+C47dh+mjKhERCdLug2MVFBvMKY/dEOiETYfzDOZcByMTl/0KzhwI3+kM/9Idrv9HmLq3nR7NiUjbaYv91+Nw6mlwTSH8oiv8bDh85VXo2Vx/7T442sI6OG0g1MyCJwfD7hUwctYn96IWEclZBeAXwsZrYWkFbH4dhv04xf1tTpp/FR+Azp+FaW/C4JHw1ydhSS9o/AOUzoUvvAOn9oSGr8CLt8AaiKX0g3BBH6gtjd23Iak74MUesftMsxSqvwTffTt2UyIRkRZrzf3XJKi5AFbshC4HoWAFjOwQuztmk06aI46tMGg0bP8MbF0Nn70OKqqg6zUwbS8Ufxue6gl/vxUm/w6GPAKn3Q0Te0LDFbBmI5zeVN9HQgPgIRgKUBG717SISIu15v4L4BYYdhZcdzNMOQ1qbv3kls1JZe2Io2/fvl5WVtYqfXufPizo3BmA9w4fhpoaTi8stPP69p047PBh1tXU8ErnzpNu6tZt0oEPPuDS7t35bK9e/9Tx4EFu3ruXxd27X927oADq6/lCUVHJ8G7dJl+wbx/LGhp4r6ho6oJu3aYmW+/aAwe4r7aW4Z07M7J370sXmF16tKaDB6moqPhGqwxYRNqNtPZfULYYPjgAXS6HF+ZD5Zmw97/B1x+Hof1jd8hkGqz6Lby6C3o9DJ9vap3/FXZ0g/v/Hwx9Es65ASr+A55rqn3WgqOsrIzKyspW6Xvu9OnMjEJpW20t/3rzzfTr35+ZM2ZQtXcvv7j1VoYMGcKkUaO4bdEiRo8ezcyLL+bpt97i5vvuY8RnP8vAXr3405NPcuHnP883R49mx1/+wrIXXmD8+PFMHznyuHX+x8aN3Ll4MRM+/WkeveoqunQ89q3dvW0bcxcubJXxikj7kc7+K56l0aenaHYm7D8Tqr4Hb3WBsc/B2eRicLS1VTt3cuOLL7KquhqAi8rKOHfgQHp36cKdr77KoF69uHf9egAuGzaMPl27AvDb1atpdOcP69Y12ffjW7bw1YcfpnfXrkwbPpxH3niDU7t35+IhQ1p9XCLS/iXuv8bC1itg5xz48D9h1A+g7nEYATAZ3uwHB+4AFsG5jdBheZKrqY74GlywDzoPg/dXwhAHGwg1zdVz0pzjuKC0lJXV1SzfupWvlpczc8wYTunWjSXTplFaVMS1Tz3FOw0N/H7yZC4aMoQR/fpx48SJvNPQwPyXX2bi6U1/RPjK7t00uvPe/v3MePRRpj30EDc812RYi4gEid9/jYADN8KaoXDgNljUG+p+D1+shx4/gMdmwbbL4W/fgKf3QY8/w9jh8HZTffeF/c9D+U0wZT18eixsvBeWNVePuTd78rzVVFRUeGt+VDW3lc6fnKi5+qhKRNKQav/1m3nz9lwLC9quopgKKKt0nw4n0RGHiIhkhoJDRESCpDw5bmZdgOeBzlH7P7v7nIQ2BtwMXAbsB6a7+9pMF7thwwaWL19OXV0dRUVFTJgwgfLy8kyvRkSkVbSXfVg6V1UdBC529wYzKwRWmNkT7r46rs2lwLDocQ7wu+hvxmzYsIGlS5dy6NAhAOrq6li6dClAXr7xInJyaU/7sJTB4bGz5w3R08LokXhGfSpwT9R2tZkVm1l/d9+TqUKXL19+9A0/4tChQzz66KOsWbPmmPnbP/iAr1VVZWrVGVF4yiks1MlxkZNWdXU1jY2Nx8w7dOgQy5cvPyY4iktLmbttW5P93Aud/piF2zTUwo4j02l9j8PMCoj9/slQ4DZ3fymhyQBgZ9zz6mjeMcFhZjOBmQClpWH3Kamrq0s6P3FDAFx4xRVBfYuItLZk+yo4ft/2oxtuaLafeXffvc2jq5uyJa3gcPdGYKSZFQOLzWy4u2+Ma5LsW4nHXefr7guILiOrqKgIug64qKgoaXgUFRUxffr0kK5ERNrcTTfd1OQ+LN8EXVXl7rXAs8CkhEXVwKC45wOB3S0pLNGECRMoLCw8Zl5hYSETJkzI5GpERFpFe9qHpQwOMyuJjjQws67AJcAbCc2WAFdbzDigLpPnNyB28mjKlCkUFBQAsZSeMmVK3p1UEpGTU3vah6XzUVV/4O7oPEcH4E/u/piZzQJw99uJfT39MqCK2OW4M1qj2PLy8qMnwvXxlIjkm/ayD0vnqqr1wKgk82+Pm3bgmsyWJiIiuUjfHBcRkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmSMjjMbJCZPWNmm83sdTP7YZI2482szszWRY/ZrVOuiIhkW8c02hwGfuLua82sJ7DGzJ52900J7V5w98mZL1FERHJJyiMOd9/j7muj6X3AZmBAaxcmIiK5Kegch5mVAaOAl5IsPtfMXjOzJ8zs7CZeP9PMKs2ssqamJrxaERHJurSDw8x6AA8BP3L3+oTFa4HB7j4CuBV4JFkf7r7A3SvcvaKkpOQESxYRkWxKKzjMrJBYaNzv7g8nLnf3endviKaXAYVm1jejlYqISE5I56oqA+4ENrv7b5po0y9qh5mNjfp9P5OFiohIbkjnqqrzga8DG8xsXTTv50ApgLvfDlwJfNfMDgMHgKvc3TNfroiIZFvK4HD3FYClaDMfmJ+pokREJHfpm+MiIhJEwSEiIkEUHCIiEkTBISIiQRQcIiISRMEhIiJBFBwiIhJEwSEiIkEUHCIiEkTBISIiQRQcIiISRMEhIiJBFBwiIhJEwSEiIkEUHCIiEkTBISIiQRQcIiISRMEhIiJBFBwiIhJEwSEiIkEUHCIiEkTBISIiQRQcIiISRMEhIiJBUgaHmQ0ys2fMbLOZvW5mP0zSxszsFjOrMrP1Zja6dcoVEZFs65hGm8PAT9x9rZn1BNaY2dPuvimuzaXAsOhxDvC76K+IiLQzKY843H2Pu6+NpvcBm4EBCc2mAvd4zGqg2Mz6Z7xaERHJuqBzHGZWBowCXkpYNADYGfe8muPDBTObaWaVZlZZU1MTWKqIiOSCtIPDzHoADwE/cvf6xMVJXuLHzXBf4O4V7l5RUlISVqmIiOSEtILDzAqJhcb97v5wkibVwKC45wOB3S0vT0REck06V1UZcCew2d1/00SzJcDV0dVV44A6d9+TwTpFRCRHpHNV1fnA14ENZrYumvdzoBTA3W8HlgGXAVXAfmBGxisVEZGckDI43H0Fyc9hxLdx4JpMFSUiIrlL3xwXEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJkjI4zOwuM3vXzDY2sXy8mdWZ2broMTvzZYqISK7omEabhcB84J5m2rzg7pMzUpGIiOS0lEcc7v48sLcNahERkTyQqXMc55rZa2b2hJmd3VQjM5tpZpVmVllTU5OhVYuISFvKRHCsBQa7+wjgVuCRphq6+wJ3r3D3ipKSkgysWkRE2lqLg8Pd6929IZpeBhSaWd8WVyYiIjmpxcFhZv3MzKLpsVGf77e0XxERyU0pr6oys0XAeKCvmVUDc4BCAHe/HbgS+K6ZHQYOAFe5u7daxSIiklUpg8Pdp6VYPp/Y5boiInIS0DfHRUQkiIJDRESCKDhERCSIgkNERIIoOEREJIiCQ0REgig4REQkiIJDRESCKDhERCSIgkNERIIoOEREJIiCQ0REgig4REQkiIJDRESCKDhERCSIgkNERIIoOEREJIiCQ0REgig4REQkiIJDRESCKDhERCSIgkNERIIoOEREJIiCQ0REgqQMDjO7y8zeNbONTSw3M7vFzKrMbL2Zjc58mSIikivSOeJYCExqZvmlwLDoMRP4XcvLEhGRXJUyONz9eWBvM02mAvd4zGqg2Mz6Z6pAERHJLZk4xzEA2Bn3vDqadxwzm2lmlWZWWVNTk4FVi4hIW8tEcFiSeZ6sobsvcPcKd68oKSnJwKpFRKStZSI4qoFBcc8HArsz0K+IiOSgTATHEuDq6OqqcUCdu+/JQL8iIpKDOqZqYGaLgPFAXzOrBuYAhQDufjuwDLgMqAL2AzNaq1gREcm+lMHh7tNSLHfgmoxVJCIiOU3fHBcRkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmi4BARkSAKDhERCaLgEBGRIAoOEREJouAQEZEgCg4REQmSVnCY2SQz+6uZVZnZz5IsH29mdWa2LnrMznypIiKSCzqmamBmBcBtwESgGnjFzJa4+6aEpi+4++RWqFFERHJIOkccY4Eqd3/b3T8CHgCmtm5ZIiKSq9IJjgHAzrjn1dG8ROea2Wtm9oSZnZ2sIzObaWaVZlZZU1NzAuWKiEi2pRMclmSeJzxfCwx29xHArcAjyTpy9wXuXuHuFSUlJUGFiohIbkgnOKqBQXHPBwK74xu4e727N0TTy4BCM+ubsSpFRCRnpBMcrwDDzGyImXUCrgKWxDcws35mZtH02Kjf9zNdrIiIZF/Kq6rc/bCZfR94EigA7nL3181sVrT8duBK4Ltmdhg4AFzl7okfZ4mISDuQMjjg6MdPyxLm3R43PR+Yn9nSREQkF+mb4yIiEkTBISIiQRQcIiISRMEhIiJBFBwiIhJEwSEiIkEUHCIiEkTBISIiQRQcIiISJK1vjuebm2bPpnbHjmyXcYzi0lJ+dMMN2S5DRHJcqv3X6VBWYbaw7SqKqYUdVe6zoZ0GR+2OHcwtK8t2GceYu21btksQkTyQav/VCz66Fra1WUGRCig7Mq2PqkREJIiCQ0REgrT74NhWW4vNm8fkP/6xRf38euVKbN48Fq5bd9yyA4cOMeGee+jxy19i8+bx65UrW7QuERHI3P5rOpxnMOc6GNlUm6ehb0f4hcGcG+Cs5vpr98HRFhrd6dO1K5OGDs12KSIiwT4GZsGUDrHJlPLi5Hj/gaW8s2vnMfNmzJjRZPvPdO3G3Ot/esy8+oMH+dKiRTy/fTtTzjyTO6ZMoXPHjqzYsYOfPPUUr7/7Lv169OD6889n5pgxQOwo41crVjC4uJjhp57a5Pp6dOrEg1/+MgvXreOhzZtbMFIRkePF77/KoPhbUNALGv8ApXPhC+/AqT2h4Svw4i2wBmJHGQ/CBX2gthTeba7/78Pn3ofiS2DNEzAuVT15ERzv7NrJ4P/+WNrtD/z75OPmrdy5k3+bMIGOHTpw3/r1fO5Tn+Kr5eV8adEiOhUU8OsvfIF7XnuN7zz2GEP79OGUrl356dNPc3ZJCd8ZM4Z5zz2XySGJiKQtfv+1+I03ul4HFdfD+mtgWgE0fhueehxG3AqT/wH29of9d8PE06DmClhzN1zYVN+vQs+7YML/gIdfgU+lU89J81HVuYMG8dPzz+fGiRMBeHbbNlZVV/PBhx/yzVGjmFVRwbzx4wF44s03eTa6fPbH48Yxc8wY/nnkyOwULiInvcT91ytQthgGHYAul8Da+VB5LTwD8DgMfTy6dHYarLoF1lwCrzbV9/fgksGweyy8VwtdAXZDj79Bp6ZekxdHHJmU7EboZnZCrxMRaUtJ91/pva7JZu9BURUMHg8/ODLv93Bpb/jw32B9stecNMGxaudObnzxRVZVVwNwUVkZ5w4cSO8uXbjz1VcZ1KsX966PvUeXDRtGn65dAfjt6tU0uvOHJFdTxbtj7VpW7oydh3l51y7uWLuWq4YPp0enJkNbRCQtifuvsbD1Ctg5Bz78Txj1A6h7HEYATIY3+8GBO4BFcG4jdFjezNVU18Mze6A7wBI4ew2cdRmsugK2N/Wak+ajqgtKS1lZXc3yrVv5ank5M8eM4ZRu3VgybRqlRUVc+9RTvNPQwO8nT+aiIUMY0a8fN06cyDsNDcx/+WUmnn56s/1/e+nSo+Hy4KZNfHvpUt7bv78NRiYi7V38/msEHLgR1gyFA7fBot5Q93v4Yj30+AE8Ngu2XQ5/+wY8vQ96/BnGDoe3m+r727B9NmyaDZtOhxqAc6B6LNQ19Zp2f8RRVlyMz5nT5PILSkt56VvfSrrsuvPO47rzzjv6fOHllzfZT3PrEBE5Ecn2X7+ZN6+2FzQCzIAdM+COZK9dCCsXQvyXyh5Jtb4/wbPEHs06aY44REQkMxQcIiISJK3gMLNJZvZXM6sys58lWW5mdku0fL2Zjc58qSIi+W3Dhg1UV1ezfft2brrpJjZs2JDtkk5IynMcZlYA3AZMBKqBV8xsibtvimt2KTAsepwD/C76mxX15N7PmBeXlma7BBHJog0bNrB06VIaGxsBqKurY+nSpQCUl5cfbVdcWtrs/ute6PTHuJ84byu1cPQmIemcHB8LVLn72wBm9gAwFYgPjqnAPe7uwGozKzaz/u6+J3Nlp+8DYO7ChdlYtYhIUsuXL+fQoUNs3LiRQYMGUVRUxKFDh1i+fPkxwZHqhm/z7r57m7tPb+Vym5XOR1UDgPgfiqqO5oW2wcxmmlmlmVXW1NSE1nqcvz04h8P73m9xPyIira2uro76+noeXvwITy5/hvvuu4/6+nrq6pq86jVnpRMcyb5xmPgFxnTa4O4L3L3C3StKSkrSqa9Zp315Hh17ntLifkREWltRURHPrVhJj7Mv4s03q5g0aRK9evWiqKgo26UFSyc4qoFBcc8HArtPoI2IyElr+PDhrF+/nl6fv5oeY77EX55fQWFhIRMmTMh2acHSCY5XgGFmNsTMOgFXAUsS2iwBro6urhoH1GXr/IaISC568OHF9BzxRQq696ZHxVSqqt6ivLz8mPMb+SJlcLj7YeD7wJPAZuBP7v66mc0ys1lRs2XEvtJeBfxf4HutVK+ISN7ZtWsX9957P90+918A6NC5Oz0qpnLP/Q9kubITk9ZPjrj7MmLhED/v9rhpB67JbGkiIu3DDf/rl3QbfgkF3Xsfndd99BSW3TWLLVu2cMYZZ2SxunAW2+e3vYqKCq+srEyrbbI7ADan34BB7KnekbqhiEgr27VrF8M+czanTJ9/THAA7Fv1ABf3/5gHH7g/7f7MbI27V2S6zhB58ZMje6p34O5pPxQaIpIrkh1tHNF99BSWPfEEW7ZsyUJlJy4vgkNEJB8dObfRteLypMs7dO5Ol5H/xL/Onte2hbWQgkNEpJU0d7RxRD4edWTtHIeZ1dDMHaZS6Au8l8FyskljyU3tZSztZRyQf2MptI6dygfMutOaCw6A2hX3e91LD9dy+GCTN1yKM9jdW/4N6hbI2o2cWjJwM6vM9smhTNFYclN7GUt7GQfk31g6FHa5uUPXHmfVvnDf4cRl/vHHnaxDh4+OPP/44H7j8EfFwJXuvq0Nyzwh7f4OgCIi2eCHDz7QuO/globXnky2+HrgfyfMawTy4sf3FBwiIq3A3VcBq5ItM7MZ7n5bG5eUMfl6cnxBtgvIII0lN7WXsbSXcYDGkjOydnJcRETyU74ecYiISJbkdHC0p3udpzGW8WZWZ2brosfsbNSZipndZWbvmtnGJpbn0zZJNZZ82SaDzOwZM9tsZq+b2Q+TtMmL7ZLmWPJlu3Qxs5fN7LVoLMd9yy9ftstxQn7Koy0fQAHwFnA60Al4DTgroc1lwBPEbiQ1Dngp23W3YCzjgceyXWsaY/k8MBrY2MTyvNgmaY4lX7ZJf2B0NN0T2JLH/6+kM5Z82S4G9IimC4GXgHH5uF0SH7l8xHH0Xufu/hFw5F7n8Y7e69zdVwPFZta/rQtNQzpjyQvu/jywt5km+bJN0hlLXnD3Pe6+NpreR+z2B4m3bs6L7ZLmWPJC9F43RE8Lo0fiSeW82C6Jcjk4Mnav8xyQbp3nRoe1T5jZ2W1TWsblyzZJV15tEzMrA0YR+9dtvLzbLs2MBfJku5hZgZmtA94Fnnb3vN8ukNvf48jYvc5zQDp1riX2UwINZnYZ8AgwrLULawX5sk3SkVfbxMx6AA8BP3L3+sTFSV6Ss9slxVjyZru4eyMw0syKgcVmNtzd48+p5dV2OSKXjzja073OU9bp7vVHDms9duOsQjPr23YlZky+bJOU8mmbmFkhsR3t/e7+cJImebNdUo0ln7bLEe5eCzwLTEpYlDfbJV4uB0d7utd5yrGYWT8zs2h6LLFtkxc/P5AgX7ZJSvmyTaIa7wQ2u/tvmmiWF9slnbHk0XYpiY40MLOuwCXAGwnN8mK7JMrZj6rc/bCZHbnXeQFwl0f3Oo+W307sdraXEbvX+X5gRrbqbU6aY7kS+K6ZHQYOAFd5dNlFLjGzRcSuaulrZtXAHGIn/fJqm0BaY8mLbQKcD3wd2BB9ng7wc6AU8m67pDOWfNku/YG7zayAWLj9yd0fy8d9WCJ9c1xERILk8kdVIiKSgxQcIiISRMEhIiJBFBwiIhJEwSEiIkEUHCIiEkTBISIiQRQcIiIS5P8DTsnCBPNyAWAAAAAASUVORK5CYII="
->
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar12</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">p1</span><span class="p">,</span> <span class="n">p2</span><span class="p">)</span>
-<span class="n">bar23</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">p2</span><span class="p">,</span> <span class="n">p3</span><span class="p">)</span>
-<span class="n">bar34</span> <span class="o">=</span> <span class="n">Bar</span><span class="p">(</span><span class="n">p3</span><span class="p">,</span> <span class="n">p4</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;bar12 = </span><span class="si">{</span><span class="n">bar12</span><span class="o">.</span><span class="n">len</span><span class="si">}</span><span class="s1"> m </span><span class="se">\n</span><span class="s1">bar23 = </span><span class="si">{</span><span class="n">bar23</span><span class="o">.</span><span class="n">len</span><span class="si">}</span><span class="s1"> m</span><span class="se">\n</span><span class="s1">bar34 = </span><span class="si">{</span><span class="n">bar34</span><span class="o">.</span><span class="n">len</span><span class="si">}</span><span class="s1"> m&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">omega</span> <span class="o">=</span> <span class="n">uhlove_frekvencie</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;omega1 = </span><span class="si">{</span><span class="n">omega</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> rad/s </span><span class="se">\n</span><span class="s1">omega2 = </span><span class="si">{</span><span class="n">omega</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> rad/s </span><span class="se">\n</span><span class="s1">omega3 = </span><span class="si">{</span><span class="n">omega</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> rad/s&#39;</span><span class="p">)</span>
 </pre></div>
 
      </div>
@@ -14489,9 +14385,9 @@ A = 0.06 m2
 
 
 <div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>bar12 = 3.0 m 
-bar23 = 3.0 m
-bar34 = 3.0 m
+<pre>omega1 = 0.446 rad/s 
+omega2 = 2.739 rad/s 
+omega3 = 7.540 rad/s
 </pre>
 </div>
 </div>
@@ -14500,57 +14396,64 @@ bar34 = 3.0 m
 
 </div>
 
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">vlastne_periody</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;T1 = </span><span class="si">{</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> s </span><span class="se">\n</span><span class="s1">T2 = </span><span class="si">{</span><span class="n">T</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> s </span><span class="se">\n</span><span class="s1">T3 = </span><span class="si">{</span><span class="n">T</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> s&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>T1 = 14.085 s 
+T2 = 2.294 s 
+T3 = 0.833 s
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>Normovane poradnice vlastnych tvarov</p>
+
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">barSolution</span><span class="p">(</span><span class="n">bar</span><span class="p">,</span> <span class="n">barProps</span><span class="p">,</span> <span class="n">load</span><span class="p">):</span>
-    <span class="c1"># print bar geometry</span>
-    <span class="p">[</span><span class="n">lx</span><span class="p">,</span> <span class="n">ly</span><span class="p">]</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">l_xy</span>
-    <span class="n">alfa</span> <span class="o">=</span> <span class="n">bar</span><span class="o">.</span><span class="n">angle</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;bar properties </span><span class="se">\n</span><span class="s1">alfa = </span><span class="si">{</span><span class="n">alfa</span><span class="si">}</span><span class="s1"> deg&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;lx = </span><span class="si">{</span><span class="n">lx</span><span class="si">}</span><span class="se">\n</span><span class="s1">ly = </span><span class="si">{</span><span class="n">ly</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># 1. poradnice vlastny tvar</span>
+<span class="n">por_1</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.09379</span><span class="p">,</span> <span class="mf">0.33105</span><span class="p">,</span> <span class="mf">0.64964</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">]</span>
 
-    <span class="c1"># print stiffness matrix</span>
-    <span class="n">bar_matrices</span> <span class="o">=</span> <span class="n">BarMatrices</span><span class="p">(</span><span class="n">barProps</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
-    <span class="n">A0</span> <span class="o">=</span> <span class="n">bar_matrices</span><span class="o">.</span><span class="n">rotation</span>
-    <span class="n">B0</span> <span class="o">=</span> <span class="n">bar_matrices</span><span class="o">.</span><span class="n">transmission</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">bar_matrices</span><span class="o">.</span><span class="n">gss_stiffness</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">parseMatrixIndexes</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span>
-        <span class="sa">f</span><span class="s1">&#39;stiffness matrix </span><span class="se">\n</span><span class="si">{</span><span class="n">k</span><span class="si">}</span><span class="se">\n</span><span class="s1"> rotation matrix </span><span class="se">\n</span><span class="si">{</span><span class="n">A0</span><span class="si">}</span><span class="se">\n</span><span class="s1"> transmission matrix </span><span class="se">\n</span><span class="si">{</span><span class="n">B0</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="c1"># 2. poradnice vlastny tvar</span>
+<span class="n">por_2</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.51996</span><span class="p">,</span> <span class="mf">1.00000</span><span class="p">,</span> <span class="mf">0.46954</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.89641</span><span class="p">]</span>
 
-    <span class="c1"># calculate primary internal forces</span>
-    <span class="n">IntF</span> <span class="o">=</span> <span class="n">InternalForces_primary</span><span class="p">(</span><span class="n">load</span><span class="p">,</span> <span class="n">bar</span><span class="p">)</span>
-
-    <span class="c1"># print load vector</span>
-    <span class="n">FA_l</span> <span class="o">=</span> <span class="n">LoadMatrix</span><span class="o">.</span><span class="n">lss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">IntF</span><span class="o">.</span><span class="n">Va</span><span class="p">,</span> <span class="n">IntF</span><span class="o">.</span><span class="n">Ma</span><span class="p">)</span>
-    <span class="n">FB_l</span> <span class="o">=</span> <span class="n">LoadMatrix</span><span class="o">.</span><span class="n">lss</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">IntF</span><span class="o">.</span><span class="n">Vb</span><span class="p">,</span> <span class="n">IntF</span><span class="o">.</span><span class="n">Mb</span><span class="p">)</span>
-    <span class="n">FA_g</span> <span class="o">=</span> <span class="n">LoadMatrix</span><span class="o">.</span><span class="n">gss</span><span class="p">(</span><span class="n">FA_l</span><span class="p">,</span> <span class="n">A0</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-    <span class="n">FB_g</span> <span class="o">=</span> <span class="n">LoadMatrix</span><span class="o">.</span><span class="n">gss</span><span class="p">(</span><span class="n">FB_l</span><span class="p">,</span> <span class="n">A0</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
-
-    <span class="n">F</span> <span class="o">=</span> <span class="n">LoadMatrix</span><span class="o">.</span><span class="n">super</span><span class="p">(</span><span class="n">FA_g</span><span class="p">,</span> <span class="n">FB_g</span><span class="p">)</span>
-    <span class="n">F</span> <span class="o">=</span> <span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">F</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;------------------------&#39;</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;load vector </span><span class="se">\n</span><span class="si">{</span><span class="n">F</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-
-    <span class="n">toReturn</span> <span class="o">=</span> <span class="p">{</span>
-        <span class="s2">&quot;bar&quot;</span> <span class="p">:</span> <span class="n">bar</span><span class="p">,</span>
-        <span class="s2">&quot;barProps&quot;</span><span class="p">:</span> <span class="n">barProps</span><span class="p">,</span>
-        <span class="s2">&quot;lx&quot;</span> <span class="p">:</span> <span class="n">lx</span><span class="p">,</span>
-        <span class="s2">&quot;ly&quot;</span> <span class="p">:</span> <span class="n">ly</span><span class="p">,</span>
-        <span class="s2">&quot;alfa&quot;</span> <span class="p">:</span> <span class="n">alfa</span><span class="p">,</span>
-        <span class="s2">&quot;A0&quot;</span> <span class="p">:</span> <span class="n">A0</span><span class="p">,</span>
-        <span class="s2">&quot;B0&quot;</span> <span class="p">:</span> <span class="n">B0</span><span class="p">,</span>
-        <span class="s2">&quot;k&quot;</span> <span class="p">:</span> <span class="n">k</span><span class="p">,</span>
-        <span class="s2">&quot;F&quot;</span> <span class="p">:</span> <span class="n">F</span><span class="p">,</span>
-        <span class="s2">&quot;FA_g&quot;</span> <span class="p">:</span> <span class="n">FA_g</span><span class="p">,</span>
-        <span class="s2">&quot;FB_g&quot;</span> <span class="p">:</span> <span class="n">FB_g</span><span class="p">,</span>
-    <span class="p">}</span>
-    <span class="k">return</span> <span class="n">toReturn</span>
+<span class="c1"># 3. poradnice vlastny tvar</span>
+<span class="n">por_3</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mf">0.94157</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.29134</span><span class="p">,</span> <span class="mf">0.89985</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.52332</span><span class="p">]</span>
 </pre></div>
 
      </div>
@@ -14564,224 +14467,8 @@ bar34 = 3.0 m
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
      <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar12_Solution</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">(</span><span class="n">bar12</span><span class="p">,</span> <span class="n">barProps</span><span class="p">,</span> <span class="n">load_bar12</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>bar properties 
-alfa = -90.0 deg
-lx = 0
-ly = -3
-------------------------
-stiffness matrix 
-            0           1           2           3           4           5
-0  6.6000e+03 -4.0009e-11  9.9000e+03 -6.6000e+03  4.0009e-11  9.9000e+03
-1 -4.0009e-11  6.6000e+05  6.0620e-13  4.0009e-11 -6.6000e+05 -1.2063e-10
-2  9.9000e+03  6.0620e-13  1.9800e+04 -9.9000e+03 -6.0620e-13  9.9000e+03
-3 -6.6000e+03  4.0009e-11 -9.9000e+03  6.6000e+03 -4.0009e-11 -9.9000e+03
-4  4.0009e-11 -6.6000e+05 -6.0620e-13 -4.0009e-11  6.6000e+05  1.2063e-10
-5  9.9000e+03 -1.2063e-10  9.9000e+03 -9.9000e+03  1.2063e-10  1.9800e+04
- rotation matrix 
-            0           1  2
-0  6.1232e-17 -1.0000e+00  0
-1  1.0000e+00  6.1232e-17  0
-2  0.0000e+00  0.0000e+00  1
- transmission matrix 
-   0  1  2
-0 -1  0  0
-1  0 -1  0
-2  3  0 -1
-------------------------
-load vector 
-            0
-0 -7.5000e+00
-1 -4.5924e-16
-2 -3.7500e+00
-3 -7.5000e+00
-4 -4.5924e-16
-5  3.7500e+00
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar23_Solution</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">(</span><span class="n">bar23</span><span class="p">,</span><span class="n">barProps</span><span class="p">,</span> <span class="n">load_bar23</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>bar properties 
-alfa = 0.0 deg
-lx = 3
-ly = 0
-------------------------
-stiffness matrix 
-          3       4        5         6       7        8
-3  660000.0     0.0      0.0 -660000.0     0.0      0.0
-4       0.0  6600.0   9900.0       0.0 -6600.0   9900.0
-5       0.0  9900.0  19800.0       0.0 -9900.0   9900.0
-6 -660000.0     0.0      0.0  660000.0     0.0      0.0
-7       0.0 -6600.0  -9900.0       0.0  6600.0  -9900.0
-8       0.0  9900.0   9900.0       0.0 -9900.0  19800.0
- rotation matrix 
-     0    1  2
-0  1.0  0.0  0
-1 -0.0  1.0  0
-2  0.0  0.0  1
- transmission matrix 
-   0  1  2
-0 -1  0  0
-1  0 -1  0
-2  0  3 -1
-------------------------
-load vector 
-      0
-3   0.0
-4 -20.0
-5 -15.0
-6   0.0
-7 -20.0
-8  15.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bar34_Solution</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">(</span><span class="n">bar34</span><span class="p">,</span> <span class="n">barProps</span><span class="p">,</span> <span class="n">load_bar34</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>bar properties 
-alfa = 90.0 deg
-lx = 0
-ly = 3
-------------------------
-stiffness matrix 
-            6           7           8           9           10          11
-6   6.6000e+03  4.0009e-11 -9.9000e+03 -6.6000e+03 -4.0009e-11 -9.9000e+03
-7   4.0009e-11  6.6000e+05  6.0620e-13 -4.0009e-11 -6.6000e+05 -1.2063e-10
-8  -9.9000e+03  6.0620e-13  1.9800e+04  9.9000e+03 -6.0620e-13  9.9000e+03
-9  -6.6000e+03 -4.0009e-11  9.9000e+03  6.6000e+03  4.0009e-11  9.9000e+03
-10 -4.0009e-11 -6.6000e+05 -6.0620e-13  4.0009e-11  6.6000e+05  1.2063e-10
-11 -9.9000e+03 -1.2063e-10  9.9000e+03  9.9000e+03  1.2063e-10  1.9800e+04
- rotation matrix 
-            0           1  2
-0  6.1232e-17  1.0000e+00  0
-1 -1.0000e+00  6.1232e-17  0
-2  0.0000e+00  0.0000e+00  1
- transmission matrix 
-   0  1  2
-0 -1  0  0
-1  0 -1  0
-2 -3  0 -1
-------------------------
-load vector 
-      0
-6   0.0
-7   0.0
-8   0.0
-9   0.0
-10  0.0
-11  0.0
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">k1</span> <span class="o">=</span> <span class="n">bar12_Solution</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span>
-<span class="n">k2</span> <span class="o">=</span> <span class="n">bar23_Solution</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span>
-<span class="n">k3</span> <span class="o">=</span> <span class="n">bar34_Solution</span><span class="p">[</span><span class="s1">&#39;k&#39;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">modelMatrix</span> <span class="o">=</span> <span class="n">modelMatrix</span><span class="p">([</span><span class="n">k1</span><span class="p">,</span><span class="n">k2</span><span class="p">,</span><span class="n">k3</span><span class="p">])</span>
-<span class="n">modelMatrix</span><span class="o">.</span><span class="n">style</span>\
-<span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;</span><span class="si">{:.2e}</span><span class="s1">&#39;</span><span class="p">)</span>\
-<span class="o">.</span><span class="n">applymap</span><span class="p">(</span><span class="n">highlightNotZero</span><span class="p">)</span>
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">poradnice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">por_1</span><span class="p">,</span> <span class="n">por_2</span><span class="p">,</span> <span class="n">por_3</span><span class="p">])</span>
+<span class="n">poradnice</span>
 </pre></div>
 
      </div>
@@ -14801,1074 +14488,11 @@ load vector
 
 
 
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<style  type="text/css" >
-#T_2b34e_row0_col0,#T_2b34e_row0_col2,#T_2b34e_row0_col5,#T_2b34e_row1_col1,#T_2b34e_row2_col0,#T_2b34e_row2_col2,#T_2b34e_row2_col5,#T_2b34e_row3_col3,#T_2b34e_row4_col4,#T_2b34e_row4_col5,#T_2b34e_row4_col8,#T_2b34e_row5_col0,#T_2b34e_row5_col2,#T_2b34e_row5_col4,#T_2b34e_row5_col5,#T_2b34e_row5_col8,#T_2b34e_row6_col6,#T_2b34e_row7_col7,#T_2b34e_row8_col4,#T_2b34e_row8_col5,#T_2b34e_row8_col8,#T_2b34e_row8_col9,#T_2b34e_row8_col11,#T_2b34e_row9_col8,#T_2b34e_row9_col9,#T_2b34e_row9_col11,#T_2b34e_row10_col10,#T_2b34e_row11_col8,#T_2b34e_row11_col9,#T_2b34e_row11_col11{
-            background:  #E1FFD5;
-        }#T_2b34e_row0_col1,#T_2b34e_row0_col4,#T_2b34e_row0_col6,#T_2b34e_row0_col7,#T_2b34e_row0_col8,#T_2b34e_row0_col9,#T_2b34e_row0_col10,#T_2b34e_row0_col11,#T_2b34e_row1_col0,#T_2b34e_row1_col2,#T_2b34e_row1_col3,#T_2b34e_row1_col5,#T_2b34e_row1_col6,#T_2b34e_row1_col7,#T_2b34e_row1_col8,#T_2b34e_row1_col9,#T_2b34e_row1_col10,#T_2b34e_row1_col11,#T_2b34e_row2_col1,#T_2b34e_row2_col4,#T_2b34e_row2_col6,#T_2b34e_row2_col7,#T_2b34e_row2_col8,#T_2b34e_row2_col9,#T_2b34e_row2_col10,#T_2b34e_row2_col11,#T_2b34e_row3_col1,#T_2b34e_row3_col4,#T_2b34e_row3_col7,#T_2b34e_row3_col8,#T_2b34e_row3_col9,#T_2b34e_row3_col10,#T_2b34e_row3_col11,#T_2b34e_row4_col0,#T_2b34e_row4_col2,#T_2b34e_row4_col3,#T_2b34e_row4_col6,#T_2b34e_row4_col9,#T_2b34e_row4_col10,#T_2b34e_row4_col11,#T_2b34e_row5_col1,#T_2b34e_row5_col6,#T_2b34e_row5_col9,#T_2b34e_row5_col10,#T_2b34e_row5_col11,#T_2b34e_row6_col0,#T_2b34e_row6_col1,#T_2b34e_row6_col2,#T_2b34e_row6_col4,#T_2b34e_row6_col5,#T_2b34e_row6_col7,#T_2b34e_row6_col10,#T_2b34e_row7_col0,#T_2b34e_row7_col1,#T_2b34e_row7_col2,#T_2b34e_row7_col3,#T_2b34e_row7_col6,#T_2b34e_row7_col9,#T_2b34e_row7_col11,#T_2b34e_row8_col0,#T_2b34e_row8_col1,#T_2b34e_row8_col2,#T_2b34e_row8_col3,#T_2b34e_row8_col10,#T_2b34e_row9_col0,#T_2b34e_row9_col1,#T_2b34e_row9_col2,#T_2b34e_row9_col3,#T_2b34e_row9_col4,#T_2b34e_row9_col5,#T_2b34e_row9_col7,#T_2b34e_row9_col10,#T_2b34e_row10_col0,#T_2b34e_row10_col1,#T_2b34e_row10_col2,#T_2b34e_row10_col3,#T_2b34e_row10_col4,#T_2b34e_row10_col5,#T_2b34e_row10_col6,#T_2b34e_row10_col8,#T_2b34e_row10_col9,#T_2b34e_row10_col11,#T_2b34e_row11_col0,#T_2b34e_row11_col1,#T_2b34e_row11_col2,#T_2b34e_row11_col3,#T_2b34e_row11_col4,#T_2b34e_row11_col5,#T_2b34e_row11_col7,#T_2b34e_row11_col10{
-            background:  #f2f2f2;
-        }#T_2b34e_row0_col3,#T_2b34e_row1_col4,#T_2b34e_row2_col3,#T_2b34e_row3_col0,#T_2b34e_row3_col2,#T_2b34e_row3_col5,#T_2b34e_row3_col6,#T_2b34e_row4_col1,#T_2b34e_row4_col7,#T_2b34e_row5_col3,#T_2b34e_row5_col7,#T_2b34e_row6_col3,#T_2b34e_row6_col8,#T_2b34e_row6_col9,#T_2b34e_row6_col11,#T_2b34e_row7_col4,#T_2b34e_row7_col5,#T_2b34e_row7_col8,#T_2b34e_row7_col10,#T_2b34e_row8_col6,#T_2b34e_row8_col7,#T_2b34e_row9_col6,#T_2b34e_row10_col7,#T_2b34e_row11_col6{
-            background:  #FFDCD5;
-        }</style><table id="T_2b34e_" ><thead>    <tr>        <th class="blank level0" ></th>        <th class="col_heading level0 col0" >0</th>        <th class="col_heading level0 col1" >1</th>        <th class="col_heading level0 col2" >2</th>        <th class="col_heading level0 col3" >3</th>        <th class="col_heading level0 col4" >4</th>        <th class="col_heading level0 col5" >5</th>        <th class="col_heading level0 col6" >6</th>        <th class="col_heading level0 col7" >7</th>        <th class="col_heading level0 col8" >8</th>        <th class="col_heading level0 col9" >9</th>        <th class="col_heading level0 col10" >10</th>        <th class="col_heading level0 col11" >11</th>    </tr></thead><tbody>
-                <tr>
-                        <th id="T_2b34e_level0_row0" class="row_heading level0 row0" >0</th>
-                        <td id="T_2b34e_row0_col0" class="data row0 col0" >6.60e+03</td>
-                        <td id="T_2b34e_row0_col1" class="data row0 col1" >-4.00e-11</td>
-                        <td id="T_2b34e_row0_col2" class="data row0 col2" >9.90e+03</td>
-                        <td id="T_2b34e_row0_col3" class="data row0 col3" >-6.60e+03</td>
-                        <td id="T_2b34e_row0_col4" class="data row0 col4" >4.00e-11</td>
-                        <td id="T_2b34e_row0_col5" class="data row0 col5" >9.90e+03</td>
-                        <td id="T_2b34e_row0_col6" class="data row0 col6" >0.00e+00</td>
-                        <td id="T_2b34e_row0_col7" class="data row0 col7" >0.00e+00</td>
-                        <td id="T_2b34e_row0_col8" class="data row0 col8" >0.00e+00</td>
-                        <td id="T_2b34e_row0_col9" class="data row0 col9" >0.00e+00</td>
-                        <td id="T_2b34e_row0_col10" class="data row0 col10" >0.00e+00</td>
-                        <td id="T_2b34e_row0_col11" class="data row0 col11" >0.00e+00</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row1" class="row_heading level0 row1" >1</th>
-                        <td id="T_2b34e_row1_col0" class="data row1 col0" >-4.00e-11</td>
-                        <td id="T_2b34e_row1_col1" class="data row1 col1" >6.60e+05</td>
-                        <td id="T_2b34e_row1_col2" class="data row1 col2" >6.06e-13</td>
-                        <td id="T_2b34e_row1_col3" class="data row1 col3" >4.00e-11</td>
-                        <td id="T_2b34e_row1_col4" class="data row1 col4" >-6.60e+05</td>
-                        <td id="T_2b34e_row1_col5" class="data row1 col5" >-1.21e-10</td>
-                        <td id="T_2b34e_row1_col6" class="data row1 col6" >0.00e+00</td>
-                        <td id="T_2b34e_row1_col7" class="data row1 col7" >0.00e+00</td>
-                        <td id="T_2b34e_row1_col8" class="data row1 col8" >0.00e+00</td>
-                        <td id="T_2b34e_row1_col9" class="data row1 col9" >0.00e+00</td>
-                        <td id="T_2b34e_row1_col10" class="data row1 col10" >0.00e+00</td>
-                        <td id="T_2b34e_row1_col11" class="data row1 col11" >0.00e+00</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row2" class="row_heading level0 row2" >2</th>
-                        <td id="T_2b34e_row2_col0" class="data row2 col0" >9.90e+03</td>
-                        <td id="T_2b34e_row2_col1" class="data row2 col1" >6.06e-13</td>
-                        <td id="T_2b34e_row2_col2" class="data row2 col2" >1.98e+04</td>
-                        <td id="T_2b34e_row2_col3" class="data row2 col3" >-9.90e+03</td>
-                        <td id="T_2b34e_row2_col4" class="data row2 col4" >-6.06e-13</td>
-                        <td id="T_2b34e_row2_col5" class="data row2 col5" >9.90e+03</td>
-                        <td id="T_2b34e_row2_col6" class="data row2 col6" >0.00e+00</td>
-                        <td id="T_2b34e_row2_col7" class="data row2 col7" >0.00e+00</td>
-                        <td id="T_2b34e_row2_col8" class="data row2 col8" >0.00e+00</td>
-                        <td id="T_2b34e_row2_col9" class="data row2 col9" >0.00e+00</td>
-                        <td id="T_2b34e_row2_col10" class="data row2 col10" >0.00e+00</td>
-                        <td id="T_2b34e_row2_col11" class="data row2 col11" >0.00e+00</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row3" class="row_heading level0 row3" >3</th>
-                        <td id="T_2b34e_row3_col0" class="data row3 col0" >-6.60e+03</td>
-                        <td id="T_2b34e_row3_col1" class="data row3 col1" >4.00e-11</td>
-                        <td id="T_2b34e_row3_col2" class="data row3 col2" >-9.90e+03</td>
-                        <td id="T_2b34e_row3_col3" class="data row3 col3" >6.67e+05</td>
-                        <td id="T_2b34e_row3_col4" class="data row3 col4" >-4.00e-11</td>
-                        <td id="T_2b34e_row3_col5" class="data row3 col5" >-9.90e+03</td>
-                        <td id="T_2b34e_row3_col6" class="data row3 col6" >-6.60e+05</td>
-                        <td id="T_2b34e_row3_col7" class="data row3 col7" >0.00e+00</td>
-                        <td id="T_2b34e_row3_col8" class="data row3 col8" >0.00e+00</td>
-                        <td id="T_2b34e_row3_col9" class="data row3 col9" >0.00e+00</td>
-                        <td id="T_2b34e_row3_col10" class="data row3 col10" >0.00e+00</td>
-                        <td id="T_2b34e_row3_col11" class="data row3 col11" >0.00e+00</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row4" class="row_heading level0 row4" >4</th>
-                        <td id="T_2b34e_row4_col0" class="data row4 col0" >4.00e-11</td>
-                        <td id="T_2b34e_row4_col1" class="data row4 col1" >-6.60e+05</td>
-                        <td id="T_2b34e_row4_col2" class="data row4 col2" >-6.06e-13</td>
-                        <td id="T_2b34e_row4_col3" class="data row4 col3" >-4.00e-11</td>
-                        <td id="T_2b34e_row4_col4" class="data row4 col4" >6.67e+05</td>
-                        <td id="T_2b34e_row4_col5" class="data row4 col5" >9.90e+03</td>
-                        <td id="T_2b34e_row4_col6" class="data row4 col6" >0.00e+00</td>
-                        <td id="T_2b34e_row4_col7" class="data row4 col7" >-6.60e+03</td>
-                        <td id="T_2b34e_row4_col8" class="data row4 col8" >9.90e+03</td>
-                        <td id="T_2b34e_row4_col9" class="data row4 col9" >0.00e+00</td>
-                        <td id="T_2b34e_row4_col10" class="data row4 col10" >0.00e+00</td>
-                        <td id="T_2b34e_row4_col11" class="data row4 col11" >0.00e+00</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row5" class="row_heading level0 row5" >5</th>
-                        <td id="T_2b34e_row5_col0" class="data row5 col0" >9.90e+03</td>
-                        <td id="T_2b34e_row5_col1" class="data row5 col1" >-1.21e-10</td>
-                        <td id="T_2b34e_row5_col2" class="data row5 col2" >9.90e+03</td>
-                        <td id="T_2b34e_row5_col3" class="data row5 col3" >-9.90e+03</td>
-                        <td id="T_2b34e_row5_col4" class="data row5 col4" >9.90e+03</td>
-                        <td id="T_2b34e_row5_col5" class="data row5 col5" >3.96e+04</td>
-                        <td id="T_2b34e_row5_col6" class="data row5 col6" >0.00e+00</td>
-                        <td id="T_2b34e_row5_col7" class="data row5 col7" >-9.90e+03</td>
-                        <td id="T_2b34e_row5_col8" class="data row5 col8" >9.90e+03</td>
-                        <td id="T_2b34e_row5_col9" class="data row5 col9" >0.00e+00</td>
-                        <td id="T_2b34e_row5_col10" class="data row5 col10" >0.00e+00</td>
-                        <td id="T_2b34e_row5_col11" class="data row5 col11" >0.00e+00</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row6" class="row_heading level0 row6" >6</th>
-                        <td id="T_2b34e_row6_col0" class="data row6 col0" >0.00e+00</td>
-                        <td id="T_2b34e_row6_col1" class="data row6 col1" >0.00e+00</td>
-                        <td id="T_2b34e_row6_col2" class="data row6 col2" >0.00e+00</td>
-                        <td id="T_2b34e_row6_col3" class="data row6 col3" >-6.60e+05</td>
-                        <td id="T_2b34e_row6_col4" class="data row6 col4" >0.00e+00</td>
-                        <td id="T_2b34e_row6_col5" class="data row6 col5" >0.00e+00</td>
-                        <td id="T_2b34e_row6_col6" class="data row6 col6" >6.67e+05</td>
-                        <td id="T_2b34e_row6_col7" class="data row6 col7" >4.00e-11</td>
-                        <td id="T_2b34e_row6_col8" class="data row6 col8" >-9.90e+03</td>
-                        <td id="T_2b34e_row6_col9" class="data row6 col9" >-6.60e+03</td>
-                        <td id="T_2b34e_row6_col10" class="data row6 col10" >-4.00e-11</td>
-                        <td id="T_2b34e_row6_col11" class="data row6 col11" >-9.90e+03</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row7" class="row_heading level0 row7" >7</th>
-                        <td id="T_2b34e_row7_col0" class="data row7 col0" >0.00e+00</td>
-                        <td id="T_2b34e_row7_col1" class="data row7 col1" >0.00e+00</td>
-                        <td id="T_2b34e_row7_col2" class="data row7 col2" >0.00e+00</td>
-                        <td id="T_2b34e_row7_col3" class="data row7 col3" >0.00e+00</td>
-                        <td id="T_2b34e_row7_col4" class="data row7 col4" >-6.60e+03</td>
-                        <td id="T_2b34e_row7_col5" class="data row7 col5" >-9.90e+03</td>
-                        <td id="T_2b34e_row7_col6" class="data row7 col6" >4.00e-11</td>
-                        <td id="T_2b34e_row7_col7" class="data row7 col7" >6.67e+05</td>
-                        <td id="T_2b34e_row7_col8" class="data row7 col8" >-9.90e+03</td>
-                        <td id="T_2b34e_row7_col9" class="data row7 col9" >-4.00e-11</td>
-                        <td id="T_2b34e_row7_col10" class="data row7 col10" >-6.60e+05</td>
-                        <td id="T_2b34e_row7_col11" class="data row7 col11" >-1.21e-10</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row8" class="row_heading level0 row8" >8</th>
-                        <td id="T_2b34e_row8_col0" class="data row8 col0" >0.00e+00</td>
-                        <td id="T_2b34e_row8_col1" class="data row8 col1" >0.00e+00</td>
-                        <td id="T_2b34e_row8_col2" class="data row8 col2" >0.00e+00</td>
-                        <td id="T_2b34e_row8_col3" class="data row8 col3" >0.00e+00</td>
-                        <td id="T_2b34e_row8_col4" class="data row8 col4" >9.90e+03</td>
-                        <td id="T_2b34e_row8_col5" class="data row8 col5" >9.90e+03</td>
-                        <td id="T_2b34e_row8_col6" class="data row8 col6" >-9.90e+03</td>
-                        <td id="T_2b34e_row8_col7" class="data row8 col7" >-9.90e+03</td>
-                        <td id="T_2b34e_row8_col8" class="data row8 col8" >3.96e+04</td>
-                        <td id="T_2b34e_row8_col9" class="data row8 col9" >9.90e+03</td>
-                        <td id="T_2b34e_row8_col10" class="data row8 col10" >-6.06e-13</td>
-                        <td id="T_2b34e_row8_col11" class="data row8 col11" >9.90e+03</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row9" class="row_heading level0 row9" >9</th>
-                        <td id="T_2b34e_row9_col0" class="data row9 col0" >0.00e+00</td>
-                        <td id="T_2b34e_row9_col1" class="data row9 col1" >0.00e+00</td>
-                        <td id="T_2b34e_row9_col2" class="data row9 col2" >0.00e+00</td>
-                        <td id="T_2b34e_row9_col3" class="data row9 col3" >0.00e+00</td>
-                        <td id="T_2b34e_row9_col4" class="data row9 col4" >0.00e+00</td>
-                        <td id="T_2b34e_row9_col5" class="data row9 col5" >0.00e+00</td>
-                        <td id="T_2b34e_row9_col6" class="data row9 col6" >-6.60e+03</td>
-                        <td id="T_2b34e_row9_col7" class="data row9 col7" >-4.00e-11</td>
-                        <td id="T_2b34e_row9_col8" class="data row9 col8" >9.90e+03</td>
-                        <td id="T_2b34e_row9_col9" class="data row9 col9" >6.60e+03</td>
-                        <td id="T_2b34e_row9_col10" class="data row9 col10" >4.00e-11</td>
-                        <td id="T_2b34e_row9_col11" class="data row9 col11" >9.90e+03</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row10" class="row_heading level0 row10" >10</th>
-                        <td id="T_2b34e_row10_col0" class="data row10 col0" >0.00e+00</td>
-                        <td id="T_2b34e_row10_col1" class="data row10 col1" >0.00e+00</td>
-                        <td id="T_2b34e_row10_col2" class="data row10 col2" >0.00e+00</td>
-                        <td id="T_2b34e_row10_col3" class="data row10 col3" >0.00e+00</td>
-                        <td id="T_2b34e_row10_col4" class="data row10 col4" >0.00e+00</td>
-                        <td id="T_2b34e_row10_col5" class="data row10 col5" >0.00e+00</td>
-                        <td id="T_2b34e_row10_col6" class="data row10 col6" >-4.00e-11</td>
-                        <td id="T_2b34e_row10_col7" class="data row10 col7" >-6.60e+05</td>
-                        <td id="T_2b34e_row10_col8" class="data row10 col8" >-6.06e-13</td>
-                        <td id="T_2b34e_row10_col9" class="data row10 col9" >4.00e-11</td>
-                        <td id="T_2b34e_row10_col10" class="data row10 col10" >6.60e+05</td>
-                        <td id="T_2b34e_row10_col11" class="data row10 col11" >1.21e-10</td>
-            </tr>
-            <tr>
-                        <th id="T_2b34e_level0_row11" class="row_heading level0 row11" >11</th>
-                        <td id="T_2b34e_row11_col0" class="data row11 col0" >0.00e+00</td>
-                        <td id="T_2b34e_row11_col1" class="data row11 col1" >0.00e+00</td>
-                        <td id="T_2b34e_row11_col2" class="data row11 col2" >0.00e+00</td>
-                        <td id="T_2b34e_row11_col3" class="data row11 col3" >0.00e+00</td>
-                        <td id="T_2b34e_row11_col4" class="data row11 col4" >0.00e+00</td>
-                        <td id="T_2b34e_row11_col5" class="data row11 col5" >0.00e+00</td>
-                        <td id="T_2b34e_row11_col6" class="data row11 col6" >-9.90e+03</td>
-                        <td id="T_2b34e_row11_col7" class="data row11 col7" >-1.21e-10</td>
-                        <td id="T_2b34e_row11_col8" class="data row11 col8" >9.90e+03</td>
-                        <td id="T_2b34e_row11_col9" class="data row11 col9" >9.90e+03</td>
-                        <td id="T_2b34e_row11_col10" class="data row11 col10" >1.21e-10</td>
-                        <td id="T_2b34e_row11_col11" class="data row11 col11" >1.98e+04</td>
-            </tr>
-    </tbody></table>
-</div>
 
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">boundaryConditionsVector</span><span class="p">(</span><span class="n">points</span><span class="p">:</span> <span class="nb">list</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-    <span class="n">dofList</span><span class="o">=</span><span class="p">[]</span>
-    <span class="k">for</span> <span class="n">point</span> <span class="ow">in</span> <span class="n">points</span><span class="p">:</span>
-        <span class="n">dofList</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">point</span><span class="o">.</span><span class="n">dof</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">dofList</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">())</span>
-    
-<span class="k">def</span> <span class="nf">boundaryConditionsFilter</span><span class="p">(</span><span class="n">bc_vector</span><span class="p">,</span> <span class="n">cond</span><span class="p">):</span>
-    <span class="n">bc</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">bc_vector</span><span class="p">)</span><span class="o">.</span><span class="n">flatten</span><span class="p">()</span>
-    <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">bc</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">==</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">values</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
-
-<span class="k">def</span> <span class="nf">loadVector</span><span class="p">(</span><span class="n">F1</span><span class="p">,</span><span class="n">F2</span><span class="p">,</span><span class="n">F3</span><span class="p">):</span>
-    <span class="n">x</span> <span class="o">=</span> <span class="n">F1</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">F2</span><span class="p">,</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">F3</span><span class="p">,</span><span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">F1</span> <span class="o">=</span> <span class="n">bar12_Solution</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">]</span>
-<span class="n">F2</span> <span class="o">=</span> <span class="n">bar23_Solution</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">]</span>
-<span class="n">F3</span> <span class="o">=</span> <span class="n">bar34_Solution</span><span class="p">[</span><span class="s1">&#39;F&#39;</span><span class="p">]</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">loadVector</span> <span class="o">=</span> <span class="n">loadVector</span><span class="p">(</span><span class="n">F1</span><span class="p">,</span><span class="n">F2</span><span class="p">,</span><span class="n">F3</span><span class="p">)</span>
-<span class="n">loadVector</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0</th>
-      <td>-7.5000e+00</td>
-    </tr>
-    <tr>
-      <th>1</th>
-      <td>-4.5924e-16</td>
-    </tr>
-    <tr>
-      <th>2</th>
-      <td>-3.7500e+00</td>
-    </tr>
-    <tr>
-      <th>3</th>
-      <td>-7.5000e+00</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>-2.0000e+01</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>-1.1250e+01</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>-2.0000e+01</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>1.5000e+01</td>
-    </tr>
-    <tr>
-      <th>9</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>10</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.0000e+00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bc_vector</span> <span class="o">=</span> <span class="n">boundaryConditionsVector</span><span class="p">([</span><span class="n">p1</span><span class="p">,</span><span class="n">p2</span><span class="p">,</span><span class="n">p3</span><span class="p">,</span><span class="n">p4</span><span class="p">])</span>
-<span class="n">bc_0</span> <span class="o">=</span> <span class="n">boundaryConditionsFilter</span><span class="p">(</span><span class="n">bc_vector</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
-<span class="n">loadVector</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">bc_0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">loadVector</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>3</th>
-      <td>-7.50</td>
-    </tr>
-    <tr>
-      <th>4</th>
-      <td>-20.00</td>
-    </tr>
-    <tr>
-      <th>5</th>
-      <td>-11.25</td>
-    </tr>
-    <tr>
-      <th>6</th>
-      <td>0.00</td>
-    </tr>
-    <tr>
-      <th>7</th>
-      <td>-20.00</td>
-    </tr>
-    <tr>
-      <th>8</th>
-      <td>15.00</td>
-    </tr>
-    <tr>
-      <th>11</th>
-      <td>0.00</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">bc_1</span> <span class="o">=</span> <span class="n">boundaryConditionsFilter</span><span class="p">(</span><span class="n">bc_vector</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
-<span class="n">copyModelMatrix</span> <span class="o">=</span> <span class="n">modelMatrix</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
-<span class="n">copyModelMatrix</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">bc_0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="n">filteredModelMatrix</span> <span class="o">=</span> <span class="n">copyModelMatrix</span><span class="p">[</span><span class="n">bc_1</span><span class="p">]</span>
-<span class="n">parseMatrixIndexes</span><span class="p">(</span><span class="n">filteredModelMatrix</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;u[2]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[2]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[2]&quot;</span><span class="p">,</span><span class="s2">&quot;u[3]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[3]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[3]&quot;</span><span class="p">,</span><span class="s2">&quot;fi[4]&quot;</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>u[2]</th>
-      <th>v[2]</th>
-      <th>fi[2]</th>
-      <th>u[3]</th>
-      <th>v[3]</th>
-      <th>fi[3]</th>
-      <th>fi[4]</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>u[2]</th>
-      <td>6.6660e+05</td>
-      <td>-4.0009e-11</td>
-      <td>-9900.0</td>
-      <td>-6.6000e+05</td>
-      <td>0.0000e+00</td>
-      <td>0.0</td>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>v[2]</th>
-      <td>-4.0009e-11</td>
-      <td>6.6660e+05</td>
-      <td>9900.0</td>
-      <td>0.0000e+00</td>
-      <td>-6.6000e+03</td>
-      <td>9900.0</td>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>fi[2]</th>
-      <td>-9.9000e+03</td>
-      <td>9.9000e+03</td>
-      <td>39600.0</td>
-      <td>0.0000e+00</td>
-      <td>-9.9000e+03</td>
-      <td>9900.0</td>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>u[3]</th>
-      <td>-6.6000e+05</td>
-      <td>0.0000e+00</td>
-      <td>0.0</td>
-      <td>6.6660e+05</td>
-      <td>4.0009e-11</td>
-      <td>-9900.0</td>
-      <td>-9.9000e+03</td>
-    </tr>
-    <tr>
-      <th>v[3]</th>
-      <td>0.0000e+00</td>
-      <td>-6.6000e+03</td>
-      <td>-9900.0</td>
-      <td>4.0009e-11</td>
-      <td>6.6660e+05</td>
-      <td>-9900.0</td>
-      <td>-1.2063e-10</td>
-    </tr>
-    <tr>
-      <th>fi[3]</th>
-      <td>0.0000e+00</td>
-      <td>9.9000e+03</td>
-      <td>9900.0</td>
-      <td>-9.9000e+03</td>
-      <td>-9.9000e+03</td>
-      <td>39600.0</td>
-      <td>9.9000e+03</td>
-    </tr>
-    <tr>
-      <th>fi[4]</th>
-      <td>0.0000e+00</td>
-      <td>0.0000e+00</td>
-      <td>0.0</td>
-      <td>-9.9000e+03</td>
-      <td>-1.2063e-10</td>
-      <td>9900.0</td>
-      <td>1.9800e+04</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">nodeDisplacements</span><span class="p">(</span><span class="n">modelMatrix</span><span class="p">):</span>
-    <span class="n">inv</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">inv</span><span class="p">(</span><span class="n">modelMatrix</span><span class="o">.</span><span class="n">values</span><span class="p">),</span> <span class="n">modelMatrix</span><span class="o">.</span><span class="n">columns</span><span class="p">,</span> <span class="n">modelMatrix</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">inv</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">loadVector</span><span class="p">)</span><span class="o">*-</span><span class="mi">1</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">displacements</span> <span class="o">=</span> <span class="n">nodeDisplacements</span><span class="p">(</span><span class="n">filteredModelMatrix</span><span class="p">)</span>
-<span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">displacements</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="p">[</span><span class="s2">&quot;u[2]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[2]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[2]&quot;</span><span class="p">,</span><span class="s2">&quot;u[3]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[3]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[3]&quot;</span><span class="p">,</span><span class="s2">&quot;fi[4]&quot;</span><span class="p">])</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>u[2]</th>
-      <td>1.6088e-03</td>
-    </tr>
-    <tr>
-      <th>v[2]</th>
-      <td>2.4897e-05</td>
-    </tr>
-    <tr>
-      <th>fi[2]</th>
-      <td>7.9611e-04</td>
-    </tr>
-    <tr>
-      <th>u[3]</th>
-      <td>1.6016e-03</td>
-    </tr>
-    <tr>
-      <th>v[3]</th>
-      <td>3.5709e-05</td>
-    </tr>
-    <tr>
-      <th>fi[3]</th>
-      <td>-4.2848e-04</td>
-    </tr>
-    <tr>
-      <th>fi[4]</th>
-      <td>1.0150e-03</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">modelDisplacements</span><span class="p">(</span><span class="n">displacements</span><span class="p">):</span>
-     <span class="k">return</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">12</span><span class="p">,</span> <span class="mi">1</span><span class="p">)))</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">displacements</span><span class="p">,</span> <span class="n">fill_value</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">modelDisplacements</span> <span class="o">=</span> <span class="n">modelDisplacements</span><span class="p">(</span><span class="n">displacements</span><span class="p">)</span>
-<span class="n">rows</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;u[1]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[1]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[1]&quot;</span><span class="p">,</span><span class="s2">&quot;u[2]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[2]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[2]&quot;</span><span class="p">,</span><span class="s2">&quot;u[3]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[3]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[3]&quot;</span><span class="p">,</span><span class="s2">&quot;u[4]&quot;</span><span class="p">,</span> <span class="s2">&quot;v[4]&quot;</span><span class="p">,</span> <span class="s2">&quot;fi[4]&quot;</span><span class="p">]</span>
-<span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">modelDisplacements</span><span class="o">.</span><span class="n">copy</span><span class="p">(),</span> <span class="n">rows</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>0</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>u[1]</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>v[1]</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>fi[1]</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>u[2]</th>
-      <td>1.6088e-03</td>
-    </tr>
-    <tr>
-      <th>v[2]</th>
-      <td>2.4897e-05</td>
-    </tr>
-    <tr>
-      <th>fi[2]</th>
-      <td>7.9611e-04</td>
-    </tr>
-    <tr>
-      <th>u[3]</th>
-      <td>1.6016e-03</td>
-    </tr>
-    <tr>
-      <th>v[3]</th>
-      <td>3.5709e-05</td>
-    </tr>
-    <tr>
-      <th>fi[3]</th>
-      <td>-4.2848e-04</td>
-    </tr>
-    <tr>
-      <th>u[4]</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>v[4]</th>
-      <td>0.0000e+00</td>
-    </tr>
-    <tr>
-      <th>fi[4]</th>
-      <td>1.0150e-03</td>
-    </tr>
-  </tbody>
-</table>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># calculate internal forces by formula --- F = F&#39; + k * delta</span>
-<span class="k">def</span> <span class="nf">barInternalForces</span><span class="p">(</span><span class="n">modelDisplacements</span><span class="p">,</span> <span class="n">barSolution</span><span class="p">):</span>
-
-    <span class="n">bar</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">[</span><span class="s2">&quot;bar&quot;</span><span class="p">]</span>
-    <span class="n">barProps</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">[</span><span class="s2">&quot;barProps&quot;</span><span class="p">]</span>
-
-    <span class="c1"># get bar displacements (delta)</span>
-    <span class="n">delta_1</span> <span class="o">=</span> <span class="n">modelDisplacements</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span>
-    <span class="n">delta_2</span> <span class="o">=</span> <span class="n">modelDisplacements</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]]</span>
-    <span class="n">deltaBar</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">delta_1</span><span class="p">,</span> <span class="n">delta_2</span><span class="p">])</span>
-
-    
-    <span class="c1"># get bar matrices</span>
-    <span class="n">A0</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">[</span><span class="s2">&quot;A0&quot;</span><span class="p">]</span>
-    <span class="n">k</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">[</span><span class="s2">&quot;k&quot;</span><span class="p">]</span>
-
-    <span class="c1"># u = k * delta</span>
-    <span class="n">u</span> <span class="o">=</span> <span class="n">k</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">deltaBar</span><span class="p">)</span>
-
-    <span class="c1"># F&#39; --- node A</span>
-    <span class="n">A0_A_parsed</span> <span class="o">=</span> <span class="n">parseMatrixIndexes</span><span class="p">(</span><span class="n">A0</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-    <span class="n">FA_g</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">[</span><span class="s2">&quot;FA_g&quot;</span><span class="p">]</span>
-    <span class="n">F_A_g_parsed</span> <span class="o">=</span> <span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">FA_g</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">3</span><span class="p">])</span>
-
-    <span class="c1"># F&#39; --- node B</span>
-    <span class="n">A0_B_parsed</span> <span class="o">=</span> <span class="n">parseMatrixIndexes</span><span class="p">(</span><span class="n">A0</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
-    <span class="n">FB_g</span> <span class="o">=</span> <span class="n">barSolution</span><span class="p">[</span><span class="s2">&quot;FB_g&quot;</span><span class="p">]</span>
-    <span class="n">F_B_g_parsed</span> <span class="o">=</span> <span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">FB_g</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">3</span><span class="p">:</span><span class="mi">6</span><span class="p">])</span>
-
-
-    <span class="c1"># F&#39; + u --- node A</span>
-    <span class="n">local</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">0</span><span class="p">]:</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">2</span><span class="p">]]</span><span class="o">+</span><span class="n">F_A_g_parsed</span>
-    <span class="n">F1</span> <span class="o">=</span> <span class="n">A0_A_parsed</span><span class="o">.</span><span class="n">T</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">local</span><span class="p">)</span>
-    <span class="n">forces_AB</span> <span class="o">=</span> <span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">F1</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;N&quot;</span><span class="p">,</span><span class="s2">&quot;V&quot;</span><span class="p">,</span><span class="s2">&quot;M&quot;</span><span class="p">])</span>
-
-    <span class="c1"># F&#39; + u --- node B</span>
-    <span class="n">local</span> <span class="o">=</span> <span class="n">u</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span><span class="n">bar</span><span class="o">.</span><span class="n">codeNumbers</span><span class="p">[</span><span class="mi">5</span><span class="p">]]</span><span class="o">+</span><span class="n">F_B_g_parsed</span>
-    <span class="n">F2</span> <span class="o">=</span> <span class="n">A0_B_parsed</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">local</span><span class="p">)</span>
-    <span class="n">forces_BA</span> <span class="o">=</span> <span class="n">parseMatrixRows</span><span class="p">(</span><span class="n">F2</span><span class="p">,</span> <span class="p">[</span><span class="s2">&quot;N&quot;</span><span class="p">,</span><span class="s2">&quot;V&quot;</span><span class="p">,</span><span class="s2">&quot;M&quot;</span><span class="p">])</span>
-
-    <span class="n">forces</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">forces_AB</span><span class="p">,</span> <span class="n">forces_BA</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">parseMatrixColumns</span><span class="p">(</span><span class="n">forces</span><span class="p">,</span> <span class="p">[</span><span class="n">bar</span><span class="o">.</span><span class="n">point_a</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">bar</span><span class="o">.</span><span class="n">point_b</span><span class="o">.</span><span class="n">name</span><span class="p">]))</span>
-    <span class="k">return</span> <span class="n">forces</span>
-
-    
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forces12</span> <span class="o">=</span> <span class="n">barInternalForces</span><span class="p">(</span><span class="n">modelDisplacements</span><span class="p">,</span> <span class="n">bar12_Solution</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>     bod 1    bod 2
-N -16.4318 -16.4318
-V  10.2365  -4.7635
-M -11.7954   3.5860
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forces23</span> <span class="o">=</span> <span class="n">barInternalForces</span><span class="p">(</span><span class="n">modelDisplacements</span><span class="p">,</span> <span class="n">bar23_Solution</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>     bod 2    bod 3
-N   4.7635  -4.7635
-V -16.4318 -23.5682
-M  -3.5860  14.2906
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forces34</span> <span class="o">=</span> <span class="n">barInternalForces</span><span class="p">(</span><span class="n">modelDisplacements</span><span class="p">,</span> <span class="n">bar34_Solution</span><span class="p">)</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-
-
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
-<pre>     bod 3       bod 4
-N -23.5682 -2.3568e+01
-V   4.7635  4.7635e+00
-M -14.2906  1.5549e-15
-</pre>
-</div>
-</div>
-
-</div>
-
-</div>
-
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
-<div class="jp-Cell-inputWrapper">
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-     <div class="CodeMirror cm-s-jupyter">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">forces_final</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">forces12</span><span class="p">,</span> <span class="n">forces23</span><span class="p">,</span> <span class="n">forces34</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">forces_final</span>
-</pre></div>
-
-     </div>
-</div>
-</div>
-</div>
-
-<div class="jp-Cell-outputWrapper">
-
-
-<div class="jp-OutputArea jp-Cell-outputArea">
-
-<div class="jp-OutputArea-child">
-
-    
-    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
-
-
-
-<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html">
-<div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>bod 1</th>
-      <th>bod 2</th>
-      <th>bod 2</th>
-      <th>bod 3</th>
-      <th>bod 3</th>
-      <th>bod 4</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>N</th>
-      <td>-16.4318</td>
-      <td>-16.4318</td>
-      <td>4.7635</td>
-      <td>-4.7635</td>
-      <td>-23.5682</td>
-      <td>-2.3568e+01</td>
-    </tr>
-    <tr>
-      <th>V</th>
-      <td>10.2365</td>
-      <td>-4.7635</td>
-      <td>-16.4318</td>
-      <td>-23.5682</td>
-      <td>4.7635</td>
-      <td>4.7635e+00</td>
-    </tr>
-    <tr>
-      <th>M</th>
-      <td>-11.7954</td>
-      <td>3.5860</td>
-      <td>-3.5860</td>
-      <td>14.2906</td>
-      <td>-14.2906</td>
-      <td>1.5549e-15</td>
-    </tr>
-  </tbody>
-</table>
-</div>
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([[ 0.09379,  0.33105,  0.64964,  1.     ],
+       [ 0.51996,  1.     ,  0.46954, -0.89641],
+       [-0.94157, -0.29134,  0.89985, -0.52332]])</pre>
 </div>
 
 </div>
@@ -15880,9 +14504,584 @@ M -14.2906  1.5549e-15
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="N">N<a class="anchor-link" href="#N">&#182;</a></h2><h2><img src="../assets/Z1/N.png" alt="N"></h2>
-<h2 id="V">V<a class="anchor-link" href="#V">&#182;</a></h2><h2><img src="../assets/Z1/V.png" alt="V"></h2>
-<h2 id="M">M<a class="anchor-link" href="#M">&#182;</a></h2><p><img src="../assets/Z1/M.png" alt="M"></p>
+<h3 id="Navrhove-spektrum">Navrhove spektrum<a class="anchor-link" href="#Navrhove-spektrum">&#182;</a></h3>
+</div>
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">parametre</span> <span class="o">=</span> <span class="n">spektrum_parametre</span><span class="p">(</span><span class="s2">&quot;C&quot;</span><span class="p">,</span> <span class="n">typ_spektra</span><span class="p">)</span>
+<span class="n">parametre</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>{&#39;S&#39;: 1.5, &#39;T_B&#39;: 0.1, &#39;T_C&#39;: 0.25, &#39;T_D&#39;: 1.2}</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">spektrum</span><span class="p">(</span><span class="n">ag</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">periody</span><span class="p">):</span>
+    <span class="n">Sd</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">perioda</span> <span class="ow">in</span> <span class="n">periody</span><span class="p">:</span>
+        <span class="n">Sd</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sd</span><span class="p">(</span><span class="n">parametre</span><span class="p">,</span> <span class="n">perioda</span><span class="p">,</span> <span class="n">ag</span><span class="p">,</span> <span class="n">q</span><span class="p">))</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Sd1 = </span><span class="si">{</span><span class="n">Sd</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Sd2 = </span><span class="si">{</span><span class="n">Sd</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> </span><span class="se">\n</span><span class="s1">Sd3 = </span><span class="si">{</span><span class="n">Sd</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">Sd</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">Sd</span> <span class="o">=</span> <span class="n">spektrum</span><span class="p">(</span><span class="n">ag</span><span class="p">,</span> <span class="n">q</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>Sd1 = 0.126 
+Sd2 = 0.126 
+Sd3 = 0.473
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ni</span><span class="p">(</span><span class="n">poradnice</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">stlpec</span><span class="p">,</span> <span class="n">riadok</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">stlpec</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">riadok</span>
+
+    <span class="n">poradnice_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">poradnice</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">citatel</span> <span class="o">=</span> <span class="n">poradnice_sum</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="n">poradnice</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="p">]</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">poradnice</span><span class="p">[</span><span class="n">j</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">*</span><span class="n">M</span>
+    <span class="n">menovatel</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">citatel</span><span class="o">/</span><span class="n">menovatel</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ni_</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hmoty</span><span class="p">):</span>
+    <span class="n">stlpce</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tvary</span><span class="p">):</span>
+        <span class="n">stlpce</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ni</span><span class="p">(</span><span class="n">poradnice</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">stlpec</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">riadok</span><span class="o">=</span><span class="n">j</span><span class="p">))</span>
+    <span class="n">ni_</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">stlpce</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ni_</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">ni_</span><span class="p">)</span><span class="o">.</span><span class="n">T</span>
+<span class="n">ni_</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>array([[ 0.12630654,  0.44582345,  0.87486708,  1.34669521],
+       [ 0.24771999,  0.47642125,  0.22369883, -0.42706877],
+       [ 0.39237526,  0.12140851, -0.37498952,  0.21808025]])</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">odozva_preTvar</span><span class="p">(</span><span class="n">ni</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Sd</span><span class="p">,</span> <span class="n">ag</span><span class="p">,</span> <span class="n">tvar</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">ni</span><span class="p">[</span><span class="n">tvar</span><span class="p">]</span><span class="o">*</span><span class="n">ag</span><span class="o">*</span><span class="n">M</span><span class="o">*</span><span class="n">Sd</span><span class="p">[</span><span class="n">tvar</span><span class="p">]</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">odozvy</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tvary</span><span class="p">):</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">odozva_preTvar</span><span class="p">(</span><span class="n">ni_</span><span class="p">,</span> <span class="n">M</span><span class="p">,</span> <span class="n">Sd</span><span class="p">,</span> <span class="n">ag</span><span class="p">,</span> <span class="n">tvar</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">. vlastny tvar </span><span class="se">\n</span><span class="s1">R</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">temp</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+    <span class="n">odozvy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+<span class="n">odozvy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">odozvy</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>1. vlastny tvar 
+R1 = [ 10.02621344  35.38946539  69.44694848 106.90066572]
+2. vlastny tvar 
+R2 = [ 19.66401294  37.8183186   17.75721331 -33.90071897]
+3. vlastny tvar 
+R3 = [ 116.80030556   36.14027743 -111.62500394   64.91703846]
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># bulharska_konstanta_1 = 8.37698</span>
+<span class="c1"># bulharska_konstanta_2 = 0.054785</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="c1"># R1 = odozvy[0]*bulharska_konstanta_1</span>
+<span class="c1"># R2 = odozvy[1]</span>
+<span class="c1"># R3 = odozvy[2]*bulharska_konstanta_2</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hmoty</span><span class="p">):</span>
+    <span class="n">V</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">odozvy</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="n">i</span><span class="p">:</span><span class="n">hmoty</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">odozvy</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="n">i</span><span class="p">:</span><span class="n">hmoty</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">odozvy</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="n">i</span><span class="p">:</span><span class="n">hmoty</span><span class="p">])</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;V</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">V</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> N&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>V1 = 249.346 N
+V2 = 213.106 N
+V3 = 183.141 N
+V4 = 129.581 N
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ramena</span> <span class="o">=</span> <span class="n">H_vector</span><span class="p">(</span><span class="n">H</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;r1 = </span><span class="si">{</span><span class="n">ramena</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s1"> m </span><span class="se">\n</span><span class="s1">r2 = </span><span class="si">{</span><span class="n">ramena</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s1"> m </span><span class="se">\n</span><span class="s1">r3 = </span><span class="si">{</span><span class="n">ramena</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s1"> m&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>r1 = 12.5 m 
+r2 = 25.0 m 
+r3 = 37.5 m
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">moment_preklopenia</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">ag</span><span class="p">,</span> <span class="n">Sd</span><span class="p">,</span> <span class="n">ni_</span><span class="p">,</span> <span class="n">ramena</span><span class="p">,</span> <span class="n">stlpec</span><span class="p">,</span> <span class="n">riadok</span><span class="p">):</span>
+    <span class="n">i</span> <span class="o">=</span> <span class="n">stlpec</span>
+    <span class="n">j</span> <span class="o">=</span> <span class="n">riadok</span>
+
+    <span class="n">moment</span> <span class="o">=</span> <span class="n">M</span><span class="o">*</span><span class="n">ag</span><span class="o">*</span><span class="n">Sd</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">*</span><span class="n">ni_</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">ramena</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">moment</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">momenty_preklopenia</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hmoty</span><span class="p">):</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;uzol </span><span class="si">{</span><span class="n">j</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1">:&#39;</span><span class="p">)</span>
+    <span class="n">moment_v_uzle</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tvary</span><span class="p">):</span>
+        <span class="n">temp</span> <span class="o">=</span> <span class="n">moment_preklopenia</span><span class="p">(</span><span class="n">M</span><span class="p">,</span> <span class="n">ag</span><span class="p">,</span> <span class="n">Sd</span><span class="p">,</span> <span class="n">ni_</span><span class="p">,</span> <span class="n">ramena</span><span class="p">,</span> <span class="n">stlpec</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">riadok</span><span class="o">=</span><span class="n">j</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Tvar</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> - M = </span><span class="si">{</span><span class="n">temp</span><span class="si">:</span><span class="s1">.3f</span><span class="si">}</span><span class="s1"> Nm&#39;</span><span class="p">)</span>
+        <span class="n">moment_v_uzle</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="n">momenty_preklopenia</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">moment_v_uzle</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>uzol 1:
+Tvar1 - M = 125.328 Nm
+Tvar2 - M = 245.800 Nm
+Tvar3 - M = 1460.004 Nm
+uzol 2:
+Tvar1 - M = 884.737 Nm
+Tvar2 - M = 945.458 Nm
+Tvar3 - M = 903.507 Nm
+uzol 3:
+Tvar1 - M = 2604.261 Nm
+Tvar2 - M = 665.895 Nm
+Tvar3 - M = -4185.938 Nm
+uzol 4:
+Tvar1 - M = 5345.033 Nm
+Tvar2 - M = -1695.036 Nm
+Tvar3 - M = 3245.852 Nm
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ohybove_momenty</span><span class="p">(</span><span class="n">odozvy</span><span class="p">,</span> <span class="n">hmoty</span><span class="p">,</span> <span class="n">ramena</span><span class="p">,</span> <span class="n">tvary</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">hmoty</span><span class="p">):</span>
+        <span class="n">odmocnit</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">tvary</span><span class="p">):</span>
+            <span class="n">odmocnit</span><span class="o">.</span><span class="n">append</span><span class="p">((</span><span class="n">np</span><span class="o">.</span><span class="n">dot</span><span class="p">(</span><span class="n">odozvy</span><span class="p">[</span><span class="n">j</span><span class="p">][</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">:</span><span class="n">hmoty</span><span class="p">],</span> <span class="n">ramena</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">hmoty</span><span class="o">-</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+        
+        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;M</span><span class="si">{</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="si">}</span><span class="s1"> = </span><span class="si">{</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">odmocnit</span><span class="p">))</span><span class="o">/</span><span class="mi">1000</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> kNm&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ohybove_momenty</span><span class="p">(</span><span class="n">odozvy</span><span class="p">,</span> <span class="n">hmoty</span><span class="p">,</span> <span class="n">ramena</span><span class="p">,</span> <span class="n">tvary</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>M1 = 6.19821 kNm
+M2 = 3.60264 kNm
+M3 = 1.61976 kNm
+M4 = 0.00000 kNm
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">momenty_preklopenia</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[&nbsp;]:</div>
+
+
+
+
+<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain">
+<pre>[[125.32766797040729, 245.80016172509733, 1460.0038195253267],
+ [884.7366346434234, 945.4579649399852, 903.5069358210408],
+ [2604.2605678738264, 665.895499286881, -4185.937647758102],
+ [5345.033285868741, -1695.035948703704, 3245.851923209082]]</pre>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">ohybovy_moment_votknutie</span><span class="p">(</span><span class="n">momenty_preklopenia</span><span class="p">):</span>
+    <span class="n">M_sum</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">momenty_preklopenia</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+    <span class="n">M_max</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">M_sum</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">M_sum</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="o">+</span><span class="n">M_sum</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;M_max = </span><span class="si">{</span><span class="n">M_max</span><span class="si">:</span><span class="s1">.5f</span><span class="si">}</span><span class="s1"> kNm&#39;</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
+<div class="jp-Cell-inputWrapper">
+<div class="jp-InputArea jp-Cell-inputArea">
+<div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[&nbsp;]:</div>
+<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
+     <div class="CodeMirror cm-s-jupyter">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="n">ohybovy_moment_votknutie</span><span class="p">(</span><span class="n">momenty_preklopenia</span><span class="p">)</span>
+</pre></div>
+
+     </div>
+</div>
+</div>
+</div>
+
+<div class="jp-Cell-outputWrapper">
+
+
+<div class="jp-OutputArea jp-Cell-outputArea">
+
+<div class="jp-OutputArea-child">
+
+    
+    <div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
+
+
+<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="text/plain">
+<pre>M_max = 9.07318 kNm
+</pre>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p><img src="../assets/Z4/vykreslenie.jpg" alt="drawing" width="1000"/></p>
 
 </div>
 </div>

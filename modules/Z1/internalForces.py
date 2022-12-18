@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from modules.model import Bar
+from modules.Z1.model import Bar
 
 
 class BaseFunctions:
@@ -28,9 +28,9 @@ class BaseFunctions:
         [a_distance, b_distance] = distance
         barLength = a_distance + b_distance
 
-        Va = load.F * b_distance**2 / \
+        Va = -load.F * b_distance**2 / \
             barLength**3 * (barLength + 2 * a_distance)
-        Vb = load.F * a_distance**2 / \
+        Vb = -load.F * a_distance**2 / \
             barLength**3 * (barLength + 2 * b_distance)
         return Va, Vb
 
@@ -38,17 +38,9 @@ class BaseFunctions:
         [a_distance, b_distance] = distance
         barLength = a_distance + b_distance
 
-        Vb = load.Q * barLength / 2
-        Va = load.Q * barLength / 2
+        Vb = -load.Q * barLength / 2
+        Va = -load.Q * barLength / 2
         return Va, Vb
-
-    def torsionMoment(self, load, distance):
-        [a_distance, b_distance] = distance
-        barLength = a_distance + b_distance
-
-        Ka = -load.K * a_distance / barLength
-        Kb = -load.K * b_distance / barLength
-        return Ka, Kb
 
 
 @dataclass
@@ -56,8 +48,6 @@ class Load:
     Q: int = 0
     F: int = 0
     F_position: int = 0.5
-    K: int = 0
-    K_position: int = 0.5
 
 
 @dataclass
@@ -70,9 +60,6 @@ class InternalForces_primary(BaseFunctions):
 
     Va: int = field(init=False, default_factory=lambda: 0)
     Vb: int = field(init=False, default_factory=lambda: 0)
-
-    Ka: int = field(init=False, default_factory=lambda: 0)
-    Kb: int = field(init=False, default_factory=lambda: 0)
 
     def __post_init__(self) -> None:
         # define local variables
@@ -87,5 +74,3 @@ class InternalForces_primary(BaseFunctions):
         if self.load.Q != 0:
             [self.Ma, self.Mb] = self.bendingMoment_Q(load, distance)
             [self.Va, self.Vb] = self.shearForce_Q(load, distance)
-        if self.load.K != 0:
-            [self.Ka, self.Kb] = self.torsionMoment(load, distance)
